@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="EasyMarneTools.Views.RadminView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <StackPanel Margin="5">
+        <ui:ImageCard Title="Radmin LAN" Source="/Assets/Images/RadminLAN.png">
+            <ui:ImageCard.Description>
+                用于加入虚拟局域网，这样才能进入没有公网IP的Marne服务器，如果你加入的是公网IP服务器，则不需要开启RadminLAN
+            </ui:ImageCard.Description>
+        </ui:ImageCard>
+
+        <WrapPanel>
+            <ui:IconButton
+                Background="{StaticResource Blue}"
+                Command="{Binding RunRadminVPNCommand}"
+                Content="启动 Radmin VPN"
+                Icon="&#xF78C;" />
+            <ui:IconButton
+                Background="{StaticResource Red}"
+                Command="{Binding CloseRadminVPNCommand}"
+                Content="关闭 Radmin VPN"
+                Icon="&#xF78A;" />
+        </WrapPanel>
+    </StackPanel>
+
+</UserControl>

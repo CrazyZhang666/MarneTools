@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>disable</Nullable>
+        <UseWPF>true</UseWPF>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Platforms>x64</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <DebugType>full</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <DebugType>full</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Fonts\SegoeMDL2.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Fonts\SegoeMDL2.ttf" />
+    </ItemGroup>
+
+</Project>

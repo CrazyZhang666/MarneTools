@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="Blue" Color="#409EFF" />
+    <SolidColorBrush x:Key="Red" Color="#F56C6C" />
+
+    <!--  ToolTip背景色为白色  -->
+    <Style TargetType="{x:Type ToolTip}">
+        <Setter Property="Background" Value="White" />
+    </Style>
+
+</ResourceDictionary>
