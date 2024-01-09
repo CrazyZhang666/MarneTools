@@ -28,6 +28,16 @@
                 Command="{Binding CloseMarneLauncherCommand}"
                 Content="关闭 MarneLauncher"
                 Icon="&#xF78A;" />
+            <ui:IconButton
+                Background="{StaticResource Blue}"
+                Command="{Binding RunBattlefieldChatCommand}"
+                Content="启动战地1中文输入工具"
+                Icon="&#xF78C;" />
+            <ui:IconButton
+                Background="{StaticResource Red}"
+                Command="{Binding CloseBattlefieldChatCommand}"
+                Content="关闭战地1中文输入工具"
+                Icon="&#xF78A;" />
         </WrapPanel>
     </StackPanel>
 

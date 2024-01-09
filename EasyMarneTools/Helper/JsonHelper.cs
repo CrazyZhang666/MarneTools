@@ -5,7 +5,7 @@ public static class JsonHelper
     /// <summary>
     /// 反序列化配置
     /// </summary>
-    private static readonly JsonSerializerOptions OptionsDese = new()
+    private static readonly JsonSerializerOptions OptionsDeserialize = new()
     {
         IncludeFields = true,
         NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals,
@@ -15,7 +15,7 @@ public static class JsonHelper
     /// <summary>
     /// 序列化配置
     /// </summary>
-    private static readonly JsonSerializerOptions OptionsSeri = new()
+    private static readonly JsonSerializerOptions OptionsSerialize = new()
     {
         WriteIndented = true,
         IncludeFields = true,
@@ -30,9 +30,9 @@ public static class JsonHelper
     /// <typeparam name="T"></typeparam>
     /// <param name="result"></param>
     /// <returns></returns>
-    public static T JsonDese<T>(string result)
+    public static T JsonDeserialize<T>(string result)
     {
-        return JsonSerializer.Deserialize<T>(result, OptionsDese);
+        return JsonSerializer.Deserialize<T>(result, OptionsDeserialize);
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ public static class JsonHelper
     /// <typeparam name="T"></typeparam>
     /// <param name="jsonClass"></param>
     /// <returns></returns>
-    public static string JsonSeri<T>(T jsonClass)
+    public static string JsonSerialize<T>(T jsonClass)
     {
-        return JsonSerializer.Serialize(jsonClass, OptionsSeri);
+        return JsonSerializer.Serialize(jsonClass, OptionsSerialize);
     }
 }

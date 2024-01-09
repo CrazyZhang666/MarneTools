@@ -4,11 +4,22 @@ public class ModConfig
 {
     public Games Games { get; set; }
     public GlobalOptions GlobalOptions { get; set; }
+
+    public ModConfig()
+    {
+        GlobalOptions = new GlobalOptions();
+        Games = new Games();
+    }
 }
 
 public class Games
 {
     public Bf1 bf1 { get; set; }
+
+    public Games()
+    {
+        bf1 = new Bf1();
+    }
 }
 
 public class GlobalOptions
@@ -27,11 +38,18 @@ public class Bf1
     public string BookmarkDb { get; set; } = "[Asset Bookmarks]|[Legacy Bookmarks]";
     public Options Options { get; set; }
     public Packs Packs { get; set; }
+
+    public Bf1()
+    {
+        Options = new Options();
+        Packs = new Packs();
+    }
 }
 
 public class Options
 {
     public string SelectedPack { get; set; } = "Default";
+    public string CommandLineArgs { get; set; } = "";
 }
 
 public class Packs
