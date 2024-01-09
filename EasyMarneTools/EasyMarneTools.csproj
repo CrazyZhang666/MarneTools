@@ -8,8 +8,17 @@
         <UseWPF>true</UseWPF>
         <Platforms>x64</Platforms>
         <StartupObject>EasyMarneTools.App</StartupObject>
-        <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
         <ApplicationIcon>Assets\Icons\Favicon.ico</ApplicationIcon>
+        <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -21,15 +30,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Assets\Images\Radmin01.png" />
-      <None Remove="Assets\Images\Radmin02.png" />
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <PackageReference Include="Downloader" Version="3.0.6" />
         <PackageReference Include="Notification.Wpf" Version="8.0.0" />
         <PackageReference Include="RestSharp" Version="110.2.0" />
+        <PackageReference Include="XamlAnimatedGif" Version="2.2.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -37,16 +42,19 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Resource Include="Assets\Gif\Radmin.gif" />
         <Resource Include="Assets\Icons\Favicon.ico" />
         <Resource Include="Assets\Images\BF1.png" />
         <Resource Include="Assets\Images\EaApp.png" />
         <Resource Include="Assets\Images\FrostyModManager.png" />
         <Resource Include="Assets\Images\MarneLauncher.png" />
         <Resource Include="Assets\Images\Origin.png" />
-        <Resource Include="Assets\Images\Radmin01.png" />
-        <Resource Include="Assets\Images\Radmin02.png" />
         <Resource Include="Assets\Images\RadminLAN.png" />
         <Resource Include="Assets\Images\Steam.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Properties\PublishProfiles\" />
     </ItemGroup>
 
 </Project>
