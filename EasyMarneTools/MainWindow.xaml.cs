@@ -79,14 +79,14 @@ public partial class MainWindow : Window
         {
             var processList = Process.GetProcesses().ToList();
 
-            MainModel.IsRadminRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_RadminLAN)) is not null;
-            MainModel.IsFrostyModRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_FrostyModManager)) is not null;
-            MainModel.IsMarneRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_MarneLauncher)) is not null;
+            MainModel.IsRadminRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_RadminLAN, StringComparison.OrdinalIgnoreCase)) is not null;
+            MainModel.IsFrostyModRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_FrostyModManager, StringComparison.OrdinalIgnoreCase)) is not null;
+            MainModel.IsMarneRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_MarneLauncher, StringComparison.OrdinalIgnoreCase)) is not null;
 
-            MainModel.IsOriginRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_Origin)) is not null;
-            MainModel.IsEaAppRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_EaApp)) is not null;
-            MainModel.IsSteamRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_Steam)) is not null;
-            MainModel.IsBF1Run = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_BF1)) is not null;
+            MainModel.IsOriginRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_Origin, StringComparison.OrdinalIgnoreCase)) is not null;
+            MainModel.IsEaAppRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_EaApp, StringComparison.OrdinalIgnoreCase)) is not null;
+            MainModel.IsSteamRun = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_Steam, StringComparison.OrdinalIgnoreCase)) is not null;
+            MainModel.IsBF1Run = processList.Find(x => x.ProcessName.Equals(FileUtil.Name_BF1, StringComparison.OrdinalIgnoreCase)) is not null;
 
             Thread.Sleep(1000);
         }

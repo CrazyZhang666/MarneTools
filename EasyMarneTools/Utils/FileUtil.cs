@@ -10,7 +10,7 @@ public static class FileUtil
 
     public const string Name_BattlefieldChat = "BattlefieldChat";
 
-    public const string Name_Origin = "origin";
+    public const string Name_Origin = "Origin";
     public const string Name_EaApp = "EADesktop";
     public const string Name_Steam = "steam";
     public const string Name_BF1 = "bf1";
