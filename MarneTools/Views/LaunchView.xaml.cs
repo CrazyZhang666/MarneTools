@@ -1,8 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using MarneTools.Helper;
 using MarneTools.Utils;
-using System.IO;
-using System.Reflection;
 
 namespace MarneTools.Views;
 
