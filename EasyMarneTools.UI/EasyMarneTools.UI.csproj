@@ -17,11 +17,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Fonts\SegoeMDL2.ttf" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Resource Include="Fonts\SegoeMDL2.ttf" />
+        <Resource Include="Fonts\SegoeMDL2.ttf" />
     </ItemGroup>
 
 </Project>
