@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarneTools", "MarneTools\Ma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarneTools.UI", "MarneTools.UI\MarneTools.UI.csproj", "{CE988066-9B88-4710-8F46-2D1C0815A720}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarneServer", "MarneServer\MarneServer.csproj", "{E72E05C6-E43A-4D7F-A986-7E69801331B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{E72E05C6-E43A-4D7F-A986-7E69801331B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{1CD9904D-A9E2-4747-A49C-CE1B94BD54AA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
