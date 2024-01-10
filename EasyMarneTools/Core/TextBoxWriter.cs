@@ -1,0 +1,16 @@
+﻿namespace EasyMarneTools.Core;
+
+public class TextBoxWriter(TextBox textBox) : TextWriter
+{
+    public override Encoding Encoding => Encoding.UTF8;
+
+    private readonly TextBox textBox = textBox;
+
+    public override void WriteLine(string value)
+    {
+        Application.Current.Dispatcher.Invoke(() =>
+        {
+            textBox?.AppendText($"{value}{Environment.NewLine}");
+        });
+    }
+}

@@ -59,7 +59,10 @@ public static class NotifierHelper
             TrimType = NotificationTextTrimType.NoTrim,
         };
 
-        _notificationManager.Show(clickContent, "MainWindowArea", ExpirationTime, null, null, true, false);
+        Application.Current.Dispatcher.Invoke(() =>
+        {
+            _notificationManager.Show(clickContent, "MainWindowArea", ExpirationTime, null, null, true, false);
+        });
     }
 
     /// <summary>
@@ -76,7 +79,10 @@ public static class NotifierHelper
             TrimType = NotificationTextTrimType.NoTrim,
         };
 
-        _notificationManager.Show(clickContent, "MainWindowArea", ExpirationTime, null, null, true, false);
+        Application.Current.Dispatcher.Invoke(() =>
+        {
+            _notificationManager.Show(clickContent, "MainWindowArea", ExpirationTime, null, null, true, false);
+        });
     }
 }
 

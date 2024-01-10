@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using EasyMarneTools.Data;
 using EasyMarneTools.Helper;
 using EasyMarneTools.Models;
 using EasyMarneTools.Utils;
@@ -35,6 +36,13 @@ public partial class MainWindow : Window
         new Thread(CheckProcessIsRunThread)
         {
             Name = "CheckProcessIsRunThread",
+            IsBackground = true
+        }.Start();
+
+        // 初始化核心数据线程
+        new Thread(InitCoreDataThread)
+        {
+            Name = "InitCoreDataThread",
             IsBackground = true
         }.Start();
     }
@@ -90,5 +98,46 @@ public partial class MainWindow : Window
 
             Thread.Sleep(1000);
         }
+    }
+
+    /// <summary>
+    /// 初始化核心数据线程
+    /// </summary>
+    private void InitCoreDataThread()
+    {
+        // 强制关闭FrostyModManager程序
+        ProcessHelper.CloseProcessNoHit(FileUtil.Name_FrostyModManager);
+
+        // 通过注册表获取战地1安装目录
+        using var bf1Reg = Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\EA Games\\Battlefield 1");
+        if (bf1Reg is not null)
+        {
+            Console.WriteLine("✔️ 获取战地1注册表成功");
+
+            var installDir = bf1Reg.GetValue("Install Dir") as string;
+            if (Directory.Exists(installDir))
+            {
+                Globals.BF1InstallDir = Path.GetDirectoryName(installDir);
+                Console.WriteLine("✔️ 获取战地1注册表安装目录成功");
+            }
+            else
+            {
+                Console.WriteLine("❌ 获取战地1注册表安装目录失败");
+            }
+        }
+        else
+        {
+            Console.WriteLine("❌ 获取战地1注册表失败");
+        }
+
+        var modConfig = new ModConfig();
+
+        // 下载mod到 Mods\bf1 文件夹
+
+        // 获取战地1安装目录
+        modConfig.Games.bf1.GamePath = Globals.BF1InstallDir;
+
+        // 写入 Frosty\manager_config.json 配置文件
+        File.WriteAllText(FileUtil.File_Local_Frosty_ManagerConfig, JsonHelper.JsonSerialize(modConfig));
     }
 }

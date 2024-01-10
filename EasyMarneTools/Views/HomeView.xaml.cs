@@ -1,4 +1,4 @@
-﻿using System.Windows.Xps.Packaging;
+﻿using EasyMarneTools.Core;
 
 namespace EasyMarneTools.Views;
 
@@ -10,5 +10,7 @@ public partial class HomeView : UserControl
     public HomeView()
     {
         InitializeComponent();
+
+        Console.SetOut(new TextBoxWriter(this.TextBox_Logger));
     }
 }

@@ -10,6 +10,11 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <Grid />
+    <TextBox
+        x:Name="TextBox_Logger"
+        Margin="5"
+        Padding="5"
+        Cursor="Arrow"
+        IsReadOnly="True" />
 
 </UserControl>

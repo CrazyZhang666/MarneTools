@@ -135,4 +135,31 @@ public static class ProcessHelper
             NotifierHelper.ShowException(ex);
         }
     }
+
+    /// <summary>
+    /// 根据名字关闭指定程序
+    /// </summary>
+    /// <param name="processName">程序名字，不需要加.exe</param>
+    public static void CloseProcessNoHit(string processName)
+    {
+        if (string.IsNullOrWhiteSpace(processName))
+            return;
+
+        if (processName.EndsWith(".exe", StringComparison.OrdinalIgnoreCase))
+            processName = processName[..^4];
+
+        if (!IsAppRun(processName))
+            return;
+
+        try
+        {
+            var appProcess = Process.GetProcesses();
+            foreach (var targetPro in appProcess)
+            {
+                if (targetPro.ProcessName.Equals(processName))
+                    targetPro.Kill();
+            }
+        }
+        catch { }
+    }
 }
