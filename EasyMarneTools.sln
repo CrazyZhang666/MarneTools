@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMarneTools", "EasyMarneTools\EasyMarneTools.csproj", "{AEBE24CC-E911-4534-877D-3E7BB588EEC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyMarneTools.UI", "EasyMarneTools.UI\EasyMarneTools.UI.csproj", "{CE988066-9B88-4710-8F46-2D1C0815A720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMarneTools.UI", "EasyMarneTools.UI\EasyMarneTools.UI.csproj", "{CE988066-9B88-4710-8F46-2D1C0815A720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarneServer", "MarneServer\MarneServer.csproj", "{E72E05C6-E43A-4D7F-A986-7E69801331B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{CE988066-9B88-4710-8F46-2D1C0815A720}.Debug|x64.Build.0 = Debug|x64
 		{CE988066-9B88-4710-8F46-2D1C0815A720}.Release|x64.ActiveCfg = Release|x64
 		{CE988066-9B88-4710-8F46-2D1C0815A720}.Release|x64.Build.0 = Release|x64
+		{E72E05C6-E43A-4D7F-A986-7E69801331B9}.Debug|x64.ActiveCfg = Debug|x64
+		{E72E05C6-E43A-4D7F-A986-7E69801331B9}.Release|x64.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

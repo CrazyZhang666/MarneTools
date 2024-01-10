@@ -22,6 +22,8 @@ public static class FileUtil
     public static string File_MarneLauncher { get; private set; }
     public static string File_BattlefieldChat { get; private set; }
 
+    public static string Dir_FrostyModManager_Mods_Bf1 { get; private set; }
+
     public static string Dir_LocalApplicationData { get; private set; }
 
     public static string Dir_Local_Frosty { get; private set; }
@@ -35,6 +37,8 @@ public static class FileUtil
         File_FrostyModManager = Path.Combine(Dir_AppData, "FrostyModManager\\FrostyModManager.exe");
         File_MarneLauncher = Path.Combine(Dir_AppData, "Marne\\MarneLauncher.exe");
         File_BattlefieldChat = Path.Combine(Dir_AppData, "Tools\\BattlefieldChat.exe");
+
+        Dir_FrostyModManager_Mods_Bf1 = Path.Combine(Dir_AppData, "FrostyModManager\\Mods\\bf1\\");
 
         Dir_LocalApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
