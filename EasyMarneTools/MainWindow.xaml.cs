@@ -166,7 +166,7 @@ public partial class MainWindow : Window
             Console.WriteLine("✔️ 关闭FrostyModManager程序成功");
 
             // 清空旧版Mod文件夹
-            FileHelper.ClearDirectory(CoreUtil.Dir_FrostyModManager_Mods_Bf1);
+            FileHelper.ClearDirectory(CoreUtil.Dir_FrostyMod_Mods_Bf1);
             Console.WriteLine("✔️ 清空旧版Mod文件夹成功");
 
             // 通过注册表获取战地1安装目录
@@ -206,7 +206,7 @@ public partial class MainWindow : Window
             if (bytes is not null)
             {
                 Console.WriteLine("✔️ 下载Mod成功");
-                File.WriteAllBytes(Path.Combine(CoreUtil.Dir_FrostyModManager_Mods_Bf1, modName), bytes);
+                File.WriteAllBytes(Path.Combine(CoreUtil.Dir_FrostyMod_Mods_Bf1, modName), bytes);
                 Console.WriteLine("✔️ 保存Mod到指定文件夹成功");
             }
             else
@@ -226,7 +226,7 @@ public partial class MainWindow : Window
             modConfig.Games.bf1.GamePath = CoreUtil.BF1InstallDir;
 
             // 写入Frosty\manager_config.json配置文件
-            File.WriteAllText(CoreUtil.File_Local_Frosty_ManagerConfig, JsonHelper.JsonSerialize(modConfig));
+            File.WriteAllText(CoreUtil.File_FrostyMod_Frosty_ManagerConfig, JsonHelper.JsonSerialize(modConfig));
             Console.WriteLine("✔️ 写入FrostyModManager配置文件成功");
 
             Console.WriteLine("👏 初始化完毕");

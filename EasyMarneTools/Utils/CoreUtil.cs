@@ -1,37 +1,15 @@
-﻿using EasyMarneTools.Helper;
-
-namespace EasyMarneTools.Utils;
+﻿namespace EasyMarneTools.Utils;
 
 public static class CoreUtil
 {
-    /// <summary>
-    /// 主程序是否在运行，用于结束线程内循环
-    /// </summary>
-    public static bool IsAppRunning = true;
+    public static bool IsAppRunning { get; set; } = true;
 
-    /// <summary>
-    /// 主窗口标题
-    /// </summary>
-    public const string MainAppWindowName = "战地1 Marne局域网Mod服启动器 - v";
+    public static Version ServerVersion { get; set; }
+    public static Version ClientVersion { get; private set; }
 
-    /// <summary>
-    /// 程序服务端版本号，如：1.2.3.4
-    /// </summary>
-    public static Version ServerVersion = Version.Parse("0.0.0.0");
-
-    /// <summary>
-    /// 程序客户端版本号，如：1.2.3.4
-    /// </summary>
-    public static readonly Version ClientVersion = Application.ResourceAssembly.GetName().Version;
-
-    /// <summary>
-    /// 战地1安装目录
-    /// </summary>
     public static string BF1InstallDir { get; set; }
 
-    public static string WebUpdate { get; set; }
-    public static string WebModName { get; set; }
-    public static string WebModDownload { get; set; }
+    public const string MainAppWindowName = "战地1 Marne局域网Mod服启动器 - v";
 
     public const string RadminInstallPath = "C:\\Program Files (x86)\\Radmin VPN\\RvRvpnGui.exe";
 
@@ -53,30 +31,35 @@ public static class CoreUtil
     public static string File_MarneLauncher { get; private set; }
     public static string File_BattlefieldChat { get; private set; }
 
-    public static string Dir_FrostyModManager_Mods_Bf1 { get; private set; }
+    public static string Dir_FrostyMod { get; private set; }
+    public static string Dir_FrostyMod_Frosty { get; private set; }
+    public static string Dir_FrostyMod_Mods_Bf1 { get; private set; }
 
-    public static string Dir_LocalApplicationData { get; private set; }
+    public static string File_FrostyMod_Frosty_ManagerConfig { get; private set; }      // manager_config.json
 
-    public static string Dir_Local_Frosty { get; private set; }
-    public static string File_Local_Frosty_ManagerConfig { get; private set; }      // manager_config.json
+    public static string WebUpdate { get; set; }
+    public static string WebModName { get; set; }
+    public static string WebModDownload { get; set; }
 
     static CoreUtil()
     {
+        ServerVersion = Version.Parse("0.0.0.0");
+        ClientVersion = Application.ResourceAssembly.GetName().Version;
+
+        ///////////////////////////////////////////////
+
         Dir_AppData = ".\\AppData\\";
 
+        Dir_FrostyMod = Path.Combine(Dir_AppData, "FrostyMod\\");
+
+        Dir_FrostyMod_Frosty = Path.Combine(Dir_FrostyMod, "Frosty\\");
+        Dir_FrostyMod_Mods_Bf1 = Path.Combine(Dir_FrostyMod, "Mods\\bf1\\");
+
         File_RadminLAN = Path.Combine(Dir_AppData, "__Installer\\Radmin_LAN_1.4.4642.1.exe");
-        File_FrostyModManager = Path.Combine(Dir_AppData, "FrostyModManager\\FrostyModManager.exe");
         File_MarneLauncher = Path.Combine(Dir_AppData, "Marne\\MarneLauncher.exe");
         File_BattlefieldChat = Path.Combine(Dir_AppData, "Tools\\BattlefieldChat.exe");
 
-        Dir_FrostyModManager_Mods_Bf1 = Path.Combine(Dir_AppData, "FrostyModManager\\Mods\\bf1\\");
-
-        Dir_LocalApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-
-        Dir_Local_Frosty = Path.Combine(Dir_LocalApplicationData, "Frosty\\");
-        File_Local_Frosty_ManagerConfig = Path.Combine(Dir_Local_Frosty, "manager_config.json");
-
-        // 如果用户第一次使用FrostyMod，这个文件夹需要创建，以便生成配置文件
-        FileHelper.CreateDirectory(Dir_Local_Frosty);
+        File_FrostyModManager = Path.Combine(Dir_FrostyMod, "FrostyModManager.exe");
+        File_FrostyMod_Frosty_ManagerConfig = Path.Combine(Dir_FrostyMod_Frosty, "manager_config.json");
     }
 }
