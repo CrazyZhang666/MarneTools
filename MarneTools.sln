@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarneTools", "MarneTools\MarneTools.csproj", "{AEBE24CC-E911-4534-877D-3E7BB588EEC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarneTools.UI", "MarneTools.UI\MarneTools.UI.csproj", "{CE988066-9B88-4710-8F46-2D1C0815A720}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarneServer", "MarneServer\MarneServer.csproj", "{E72E05C6-E43A-4D7F-A986-7E69801331B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEBE24CC-E911-4534-877D-3E7BB588EEC1}.Debug|x64.ActiveCfg = Debug|x64
+		{AEBE24CC-E911-4534-877D-3E7BB588EEC1}.Debug|x64.Build.0 = Debug|x64
+		{AEBE24CC-E911-4534-877D-3E7BB588EEC1}.Release|x64.ActiveCfg = Release|x64
+		{AEBE24CC-E911-4534-877D-3E7BB588EEC1}.Release|x64.Build.0 = Release|x64
+		{CE988066-9B88-4710-8F46-2D1C0815A720}.Debug|x64.ActiveCfg = Debug|x64
+		{CE988066-9B88-4710-8F46-2D1C0815A720}.Debug|x64.Build.0 = Debug|x64
+		{CE988066-9B88-4710-8F46-2D1C0815A720}.Release|x64.ActiveCfg = Release|x64
+		{CE988066-9B88-4710-8F46-2D1C0815A720}.Release|x64.Build.0 = Release|x64
+		{E72E05C6-E43A-4D7F-A986-7E69801331B9}.Debug|x64.ActiveCfg = Debug|x64
+		{E72E05C6-E43A-4D7F-A986-7E69801331B9}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C051CE63-2283-43EF-BBC4-4B37A65EBCE6}
+	EndGlobalSection
+EndGlobal

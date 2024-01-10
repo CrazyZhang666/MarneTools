@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/Global.xaml" />
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/Image.xaml" />
+
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/IconFont.xaml" />
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/IconButton.xaml" />
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/NavMenu.xaml" />
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/StateCard.xaml" />
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/ImageCard.xaml" />
+
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

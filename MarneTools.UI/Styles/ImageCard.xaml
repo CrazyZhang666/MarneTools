@@ -1,0 +1,52 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MarneTools.UI.Controls">
+
+    <Style TargetType="{x:Type controls:ImageCard}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ImageCard}">
+                    <Border
+                        Height="150"
+                        Margin="5"
+                        Padding="7"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        SnapsToDevicePixels="True">
+                        <DockPanel>
+                            <ContentPresenter Content="{TemplateBinding CardContent}" DockPanel.Dock="Bottom" />
+                            <DockPanel>
+                                <Image
+                                    Width="45"
+                                    Height="45"
+                                    Margin="0,5,7,0"
+                                    VerticalAlignment="Top"
+                                    DockPanel.Dock="Left"
+                                    Source="{TemplateBinding Source}" />
+                                <DockPanel>
+                                    <TextBlock
+                                        Margin="0,0,0,5"
+                                        DockPanel.Dock="Top"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="{TemplateBinding Title}" />
+                                    <TextBlock Text="{TemplateBinding Description}" TextWrapping="Wrap" />
+                                </DockPanel>
+                            </DockPanel>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
