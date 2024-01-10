@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using MarneTools.Helper;
 using MarneTools.Utils;
+using System.IO;
+using System.Reflection;
 
 namespace MarneTools.Views;
 
@@ -58,6 +60,13 @@ public partial class LaunchView : UserControl
     [RelayCommand]
     private void RunFrostyModManager()
     {
+        // 如果战地1正在运行，则不允许启动FrostyModManager
+        if (ProcessHelper.IsAppRun(CoreUtil.Name_BF1))
+        {
+            NotifierHelper.Show(NotifierType.Warning, $"战地1正在运行，请关闭战地后再启动FrostyModManager程序");
+            return;
+        }
+
         ProcessHelper.OpenProcess(CoreUtil.File_FrostyModManager);
     }
 
