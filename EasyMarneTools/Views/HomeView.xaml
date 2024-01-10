@@ -14,8 +14,8 @@
         x:Name="TextBox_Logger"
         Margin="5"
         Padding="5"
+        d:Text=".NET 桌面运行时使用户能够运行现有 Windows 桌面应用程序。此版本包括 .NET 运行时；无需单独安装。"
         Cursor="Arrow"
-        FontFamily="Consolas"
         IsReadOnly="True" />
 
 </UserControl>

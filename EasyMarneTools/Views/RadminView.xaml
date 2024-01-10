@@ -34,23 +34,56 @@
                 Icon="&#xF78A;" />
         </WrapPanel>
 
-        <WrapPanel>
-            <Image Margin="5" gif:AnimationBehavior.SourceUri="/Assets/Gif/Radmin.gif" />
+        <DockPanel>
+            <Image
+                Margin="5"
+                gif:AnimationBehavior.SourceUri="/Assets/Gif/Radmin.gif"
+                DockPanel.Dock="Left" />
 
-            <StackPanel>
+            <StackPanel HorizontalAlignment="Left">
                 <TextBlock
                     Margin="5"
                     FontSize="14"
-                    FontWeight="Bold">
-                    本群虚拟局域网房间固定为
-                </TextBlock>
+                    FontWeight="Bold"
+                    Text="本群虚拟局域网房间固定为" />
+
+                <DockPanel Width="230">
+                    <TextBlock
+                        Width="60"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Left"
+                        FontSize="14"
+                        Text="网络名称：" />
+                    <TextBox
+                        Margin="5"
+                        Padding="5"
+                        IsReadOnly="True"
+                        Text="BF1-Marne-Mod" />
+                </DockPanel>
+
+                <DockPanel Width="230">
+                    <TextBlock
+                        Width="60"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Left"
+                        FontSize="14"
+                        Text="密码：" />
+                    <TextBox
+                        Margin="5"
+                        Padding="5"
+                        IsReadOnly="True"
+                        Text="123456" />
+                </DockPanel>
+
+                <TextBlock
+                    Margin="5"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="具体步骤" />
+
                 <TextBlock Margin="5">
-                    <Bold FontSize="14">网络名称：</Bold>
-                    BF1-Marne-Mod<LineBreak />
-                    <Bold FontSize="14">密码：</Bold>
-                    123456</TextBlock>
-                <TextBlock Margin="5">
-                    <Bold FontSize="14">具体步骤：</Bold><LineBreak />
                     1. 先点击在线按钮<LineBreak />
                     2. 点击加入网络<LineBreak />
                     3. 选择私人网络<LineBreak />
@@ -58,7 +91,7 @@
                     5. 点击加入<LineBreak />
                     6. 如果延迟过高，请检查网络</TextBlock>
             </StackPanel>
-        </WrapPanel>
+        </DockPanel>
     </DockPanel>
 
 </UserControl>

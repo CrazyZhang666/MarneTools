@@ -42,6 +42,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Resource Include="Assets\Gif\Fbmod.gif" />
+        <Resource Include="Assets\Gif\Marne.gif" />
         <Resource Include="Assets\Gif\Radmin.gif" />
         <Resource Include="Assets\Icons\Favicon.ico" />
         <Resource Include="Assets\Images\BF1.png" />

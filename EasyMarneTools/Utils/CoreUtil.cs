@@ -12,7 +12,7 @@ public static class CoreUtil
     /// <summary>
     /// 主窗口标题
     /// </summary>
-    public const string MainAppWindowName = "Easy Marne Mod 启动器 - v";
+    public const string MainAppWindowName = "战地1 Marne局域网Mod服启动器 - v";
 
     /// <summary>
     /// 程序服务端版本号，如：1.2.3.4

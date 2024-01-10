@@ -30,6 +30,9 @@ public partial class MainWindow : Window
 
     private void Window_Loaded(object sender, RoutedEventArgs e)
     {
+        // 设置主窗口标题
+        this.Title = CoreUtil.MainAppWindowName + CoreUtil.ClientVersion;
+
         Navigate("HomeView");
 
         // 检查目标进程是否运行线程
@@ -107,6 +110,11 @@ public partial class MainWindow : Window
     {
         try
         {
+            this.Dispatcher.Invoke(() =>
+            {
+                NotifierHelper.Show(NotifierType.Information, "开始初始化工具，请稍后...");
+            });
+
             // 检查软件更新
             Console.WriteLine("☁️ 开始获取服务器配置信息...");
             var response = await HttpHelper.GetServerConfig();
@@ -222,6 +230,10 @@ public partial class MainWindow : Window
             Console.WriteLine("✔️ 写入FrostyModManager配置文件成功");
 
             Console.WriteLine("👏 初始化完毕");
+            this.Dispatcher.Invoke(() =>
+            {
+                NotifierHelper.Show(NotifierType.Success, "初始化完毕，现在你可以正常使用工具了");
+            });
         }
         catch (Exception ex)
         {

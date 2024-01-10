@@ -7,7 +7,7 @@
     xmlns:ntf="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
     Name="Window_Main"
-    Title="Easy Marne Mod 启动器 - v1.0.0.0"
+    Title="战地1 Marne局域网Mod服启动器 - v1.0.0.0"
     Width="900"
     Height="600"
     Closing="Window_Closing"
@@ -87,14 +87,14 @@
                         Icon="&#xE734;" />
                     <ui:NavMenu
                         Command="{Binding NavigateCommand}"
-                        CommandParameter="FbmodView"
-                        Content="第二部"
+                        CommandParameter="MarneView"
+                        Content="第二步"
                         GroupName="NavMenu"
                         Icon="&#xE734;" />
                     <ui:NavMenu
                         Command="{Binding NavigateCommand}"
-                        CommandParameter="MarneView"
-                        Content="第三步"
+                        CommandParameter="FbmodView"
+                        Content="第三部"
                         GroupName="NavMenu"
                         Icon="&#xE734;" />
                 </StackPanel>
