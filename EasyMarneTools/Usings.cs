@@ -18,6 +18,7 @@ global using System.Windows.Shell;
 global using System.Windows.Threading;
 global using System.Collections.ObjectModel;
 global using System.Security.Principal;
+global using System.Text.Json.Nodes;
 global using System.Windows.Media;
 global using System.Text.Encodings.Web;
 global using System.Text.Json.Serialization;

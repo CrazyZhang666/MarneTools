@@ -15,6 +15,7 @@
         Margin="5"
         Padding="5"
         Cursor="Arrow"
+        FontFamily="Consolas"
         IsReadOnly="True" />
 
 </UserControl>

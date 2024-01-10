@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using EasyMarneTools.Helper;
+using EasyMarneTools.Utils;
 
 namespace EasyMarneTools.Views;
 
@@ -16,12 +17,12 @@ public partial class FbmodView : UserControl
     [RelayCommand]
     private void RunFrostyModManager()
     {
-        ProcessHelper.OpenProcess(FileUtil.File_FrostyModManager);
+        ProcessHelper.OpenProcess(CoreUtil.File_FrostyModManager);
     }
 
     [RelayCommand]
     private void CloseFrostyModManager()
     {
-        ProcessHelper.CloseProcess(FileUtil.Name_FrostyModManager);
+        ProcessHelper.CloseProcess(CoreUtil.Name_FrostyModManager);
     }
 }

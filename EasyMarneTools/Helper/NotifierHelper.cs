@@ -51,7 +51,7 @@ public static class NotifierHelper
             _ => "",
         };
 
-        var clickContent = new NotificationContent
+        var content = new NotificationContent
         {
             Title = title,
             Message = message,
@@ -59,10 +59,7 @@ public static class NotifierHelper
             TrimType = NotificationTextTrimType.NoTrim,
         };
 
-        Application.Current.Dispatcher.Invoke(() =>
-        {
-            _notificationManager.Show(clickContent, "MainWindowArea", ExpirationTime, null, null, true, false);
-        });
+        _notificationManager.Show(content, "MainWindowArea", ExpirationTime, null, null, true, false);
     }
 
     /// <summary>
@@ -71,7 +68,7 @@ public static class NotifierHelper
     /// <param name="ex">异常</param>
     public static void ShowException(Exception ex)
     {
-        var clickContent = new NotificationContent
+        var content = new NotificationContent
         {
             Title = "错误",
             Message = $"发生未知异常\n{ex.Message}",
@@ -79,10 +76,7 @@ public static class NotifierHelper
             TrimType = NotificationTextTrimType.NoTrim,
         };
 
-        Application.Current.Dispatcher.Invoke(() =>
-        {
-            _notificationManager.Show(clickContent, "MainWindowArea", ExpirationTime, null, null, true, false);
-        });
+        _notificationManager.Show(content, "MainWindowArea", ExpirationTime, null, null, true, false);
     }
 }
 

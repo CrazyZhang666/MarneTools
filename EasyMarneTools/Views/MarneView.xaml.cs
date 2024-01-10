@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using EasyMarneTools.Helper;
+using EasyMarneTools.Utils;
 
 namespace EasyMarneTools.Views;
 
@@ -16,24 +17,24 @@ public partial class MarneView : UserControl
     [RelayCommand]
     private void RunMarneLauncher()
     {
-        ProcessHelper.OpenProcess(FileUtil.File_MarneLauncher);
+        ProcessHelper.OpenProcess(CoreUtil.File_MarneLauncher);
     }
 
     [RelayCommand]
     private void CloseMarneLauncher()
     {
-        ProcessHelper.CloseProcess(FileUtil.Name_MarneLauncher);
+        ProcessHelper.CloseProcess(CoreUtil.Name_MarneLauncher);
     }
 
     [RelayCommand]
     private void RunBattlefieldChat()
     {
-        ProcessHelper.OpenProcess(FileUtil.File_BattlefieldChat);
+        ProcessHelper.OpenProcess(CoreUtil.File_BattlefieldChat);
     }
 
     [RelayCommand]
     private void CloseBattlefieldChat()
     {
-        ProcessHelper.CloseProcess(FileUtil.Name_BattlefieldChat);
+        ProcessHelper.CloseProcess(CoreUtil.Name_BattlefieldChat);
     }
 }

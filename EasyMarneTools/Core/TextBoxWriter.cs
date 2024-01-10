@@ -10,7 +10,7 @@ public class TextBoxWriter(TextBox textBox) : TextWriter
     {
         Application.Current.Dispatcher.Invoke(() =>
         {
-            textBox?.AppendText($"{value}{Environment.NewLine}");
+            textBox?.AppendText($"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  {value}{Environment.NewLine}");
         });
     }
 }
