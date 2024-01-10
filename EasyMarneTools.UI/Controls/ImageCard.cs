@@ -34,4 +34,15 @@ public class ImageCard : Control
     }
     public static readonly DependencyProperty DescriptionProperty =
         DependencyProperty.Register("Description", typeof(string), typeof(ImageCard), new PropertyMetadata(default));
+
+    /// <summary>
+    /// 卡片内容
+    /// </summary>
+    public UIElement CardContent
+    {
+        get { return (UIElement)GetValue(CardContentProperty); }
+        set { SetValue(CardContentProperty, value); }
+    }
+    public static readonly DependencyProperty CardContentProperty =
+        DependencyProperty.Register("CardContent", typeof(UIElement), typeof(ImageCard), new PropertyMetadata(default));
 }

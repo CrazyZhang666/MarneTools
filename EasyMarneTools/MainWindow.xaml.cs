@@ -33,7 +33,7 @@ public partial class MainWindow : Window
         // 设置主窗口标题
         this.Title = CoreUtil.MainAppWindowName + CoreUtil.ClientVersion;
 
-        Navigate("HomeView");
+        Navigate("StateView");
 
         // 检查目标进程是否运行线程
         new Thread(CheckProcessIsRunThread)
@@ -91,8 +91,8 @@ public partial class MainWindow : Window
             var processList = Process.GetProcesses().ToList();
 
             MainModel.IsRadminRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_RadminLAN, StringComparison.OrdinalIgnoreCase)) is not null;
-            MainModel.IsFrostyModRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_FrostyModManager, StringComparison.OrdinalIgnoreCase)) is not null;
             MainModel.IsMarneRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_MarneLauncher, StringComparison.OrdinalIgnoreCase)) is not null;
+            MainModel.IsFrostyModRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_FrostyModManager, StringComparison.OrdinalIgnoreCase)) is not null;
 
             MainModel.IsOriginRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_Origin, StringComparison.OrdinalIgnoreCase)) is not null;
             MainModel.IsEaAppRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_EaApp, StringComparison.OrdinalIgnoreCase)) is not null;

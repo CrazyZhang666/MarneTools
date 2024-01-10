@@ -8,10 +8,10 @@ public partial class MainModel : ObservableObject
     private bool isRadminRun;
 
     [ObservableProperty]
-    private bool isFrostyModRun;
+    private bool isMarneRun;
 
     [ObservableProperty]
-    private bool isMarneRun;
+    private bool isFrostyModRun;
 
     [ObservableProperty]
     private bool isOriginRun;

@@ -12,9 +12,9 @@
 [assembly: Guid("5fb70021-662a-4fbd-a303-df16f74c32ea")]
 
 // PropertyGroup Generate????Attribute
-[assembly: AssemblyTitle("战地1 Marne局域网Mod服启动器")]
+[assembly: AssemblyTitle("战地1 Marne Mod服启动器")]
 [assembly: AssemblyCompany("https://battlefield.vip")]
-[assembly: AssemblyProduct("战地1 Marne局域网Mod服启动器")]
+[assembly: AssemblyProduct("战地1 Marne Mod服启动器")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: AssemblyInformationalVersion("1.0.0.0")]

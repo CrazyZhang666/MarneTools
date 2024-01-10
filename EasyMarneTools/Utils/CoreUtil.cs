@@ -9,7 +9,7 @@ public static class CoreUtil
 
     public static string BF1InstallDir { get; set; }
 
-    public const string MainAppWindowName = "战地1 Marne局域网Mod服启动器 - v";
+    public const string MainAppWindowName = "战地1 Marne Mod服启动器 - v";
 
     public const string RadminInstallPath = "C:\\Program Files (x86)\\Radmin VPN\\RvRvpnGui.exe";
 

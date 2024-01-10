@@ -7,7 +7,7 @@
     xmlns:ntf="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
     Name="Window_Main"
-    Title="战地1 Marne局域网Mod服启动器 - v1.0.0.0"
+    Title="战地1 Marne Mod服启动器 v1.0.0.0"
     Width="900"
     Height="600"
     Closing="Window_Closing"
@@ -39,13 +39,13 @@
                     IsRunning="{Binding MainModel.IsRadminRun}"
                     Source="/Assets/Images/RadminLAN.png" />
                 <ui:StateCard
-                    Title="Frosty Mod Manager"
-                    IsRunning="{Binding MainModel.IsFrostyModRun}"
-                    Source="/Assets/Images/FrostyModManager.png" />
-                <ui:StateCard
                     Title="Marne Launcher"
                     IsRunning="{Binding MainModel.IsMarneRun}"
                     Source="/Assets/Images/MarneLauncher.png" />
+                <ui:StateCard
+                    Title="Frosty Mod Manager"
+                    IsRunning="{Binding MainModel.IsFrostyModRun}"
+                    Source="/Assets/Images/FrostyModManager.png" />
                 <ui:StateCard
                     Title="Origin"
                     IsRunning="{Binding MainModel.IsOriginRun}"
@@ -74,27 +74,27 @@
                 <StackPanel>
                     <ui:NavMenu
                         Command="{Binding NavigateCommand}"
-                        CommandParameter="HomeView"
-                        Content="主页"
+                        CommandParameter="StateView"
+                        Content="初始化"
                         GroupName="NavMenu"
                         Icon="&#xE734;"
                         IsChecked="True" />
                     <ui:NavMenu
                         Command="{Binding NavigateCommand}"
-                        CommandParameter="RadminView"
-                        Content="第一步"
+                        CommandParameter="LaunchView"
+                        Content="启动联机"
                         GroupName="NavMenu"
                         Icon="&#xE734;" />
                     <ui:NavMenu
                         Command="{Binding NavigateCommand}"
-                        CommandParameter="MarneView"
-                        Content="第二步"
+                        CommandParameter="ToolView"
+                        Content="工具箱"
                         GroupName="NavMenu"
                         Icon="&#xE734;" />
                     <ui:NavMenu
                         Command="{Binding NavigateCommand}"
-                        CommandParameter="FbmodView"
-                        Content="第三部"
+                        CommandParameter="AboutView"
+                        Content="关于"
                         GroupName="NavMenu"
                         Icon="&#xE734;" />
                 </StackPanel>

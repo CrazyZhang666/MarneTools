@@ -15,8 +15,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:StateCard}">
                     <Border
-                        Width="80"
-                        Height="80"
+                        Width="70"
+                        Height="70"
                         Padding="7"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -26,8 +26,8 @@
                         ToolTip="{TemplateBinding Title}">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Image
-                                Width="40"
-                                Height="40"
+                                Width="32"
+                                Height="32"
                                 Margin="0,0,0,7"
                                 HorizontalAlignment="Center"
                                 Source="{TemplateBinding Source}" />

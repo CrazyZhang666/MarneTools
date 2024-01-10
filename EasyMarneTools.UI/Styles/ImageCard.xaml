@@ -14,6 +14,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ImageCard}">
                     <Border
+                        Height="150"
                         Margin="5"
                         Padding="7"
                         Background="{TemplateBinding Background}"
@@ -22,20 +23,24 @@
                         CornerRadius="5"
                         SnapsToDevicePixels="True">
                         <DockPanel>
-                            <Image
-                                Width="45"
-                                Height="45"
-                                Margin="0,0,7,0"
-                                DockPanel.Dock="Left"
-                                Source="{TemplateBinding Source}" />
+                            <ContentPresenter Content="{TemplateBinding CardContent}" DockPanel.Dock="Bottom" />
                             <DockPanel>
-                                <TextBlock
-                                    Margin="0,0,0,5"
-                                    DockPanel.Dock="Top"
-                                    FontSize="16"
-                                    FontWeight="Bold"
-                                    Text="{TemplateBinding Title}" />
-                                <TextBlock Text="{TemplateBinding Description}" TextWrapping="Wrap" />
+                                <Image
+                                    Width="45"
+                                    Height="45"
+                                    Margin="0,5,7,0"
+                                    VerticalAlignment="Top"
+                                    DockPanel.Dock="Left"
+                                    Source="{TemplateBinding Source}" />
+                                <DockPanel>
+                                    <TextBlock
+                                        Margin="0,0,0,5"
+                                        DockPanel.Dock="Top"
+                                        FontSize="16"
+                                        FontWeight="Bold"
+                                        Text="{TemplateBinding Title}" />
+                                    <TextBlock Text="{TemplateBinding Description}" TextWrapping="Wrap" />
+                                </DockPanel>
                             </DockPanel>
                         </DockPanel>
                     </Border>
