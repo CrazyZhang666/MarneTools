@@ -17,6 +17,10 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
 
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo ProgressState="Normal" ProgressValue="{Binding LoadModel.ProgressValue}" />
+    </Window.TaskbarItemInfo>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -31,10 +35,19 @@
             Cursor="Arrow"
             IsReadOnly="True" />
         <!--  下载进度区域  -->
-        <ProgressBar
-            Grid.Row="1"
-            Height="36"
-            Margin="5,0,5,5" />
+        <Grid Grid.Row="1" Margin="5,0,5,5">
+            <ProgressBar
+                Height="35"
+                Maximum="{Binding LoadModel.TotalSize}"
+                Minimum="0"
+                SmallChange="1"
+                Value="{Binding LoadModel.ReceiveSize}" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                d:Text="0KB / 0MB"
+                Text="{Binding LoadModel.DownloadState}" />
+        </Grid>
     </Grid>
 
 </Window>

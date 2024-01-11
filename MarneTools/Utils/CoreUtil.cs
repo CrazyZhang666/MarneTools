@@ -47,7 +47,7 @@ public static class CoreUtil
 
         ///////////////////////////////////////////////
 
-        Dir_AppData = ".\\AppData\\";
+        Dir_AppData = Path.Combine(Environment.CurrentDirectory, "AppData\\");
 
         Dir_FrostyMod = Path.Combine(Dir_AppData, "FrostyMod\\");
         Dir_Marne = Path.Combine(Dir_AppData, "Marne\\");

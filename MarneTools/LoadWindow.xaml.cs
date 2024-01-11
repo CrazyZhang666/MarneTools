@@ -1,6 +1,9 @@
 ﻿using MarneTools.Data;
 using MarneTools.Utils;
 using MarneTools.Helper;
+using MarneTools.Models;
+
+using Downloader;
 
 namespace MarneTools;
 
@@ -9,6 +12,11 @@ namespace MarneTools;
 /// </summary>
 public partial class LoadWindow : Window
 {
+    /// <summary>
+    /// 主窗口数据模型
+    /// </summary>
+    public LoadModel LoadModel { get; set; } = new();
+
     public LoadWindow()
     {
         InitializeComponent();
@@ -22,6 +30,9 @@ public partial class LoadWindow : Window
             Name = "InitializeThread",
             IsBackground = true
         }.Start();
+
+        LoadModel.ReceiveSize = 0;
+        LoadModel.TotalSize = 100;
     }
 
     private void Window_Closing(object sender, CancelEventArgs e)
@@ -121,7 +132,34 @@ public partial class LoadWindow : Window
                     // 开始下载最新版本Marne.dll
                     AppendLogger($"📢 发现新版本Marne.dll文件，正在下载最新版本");
 
+                    var downloader = DownloadBuilder.New()
+                        .WithUrl(webMarneDll)
+                        .WithFileLocation(CoreUtil.File_Marne_MarneDll)
+                        .Build();
 
+                    downloader.DownloadStarted += (sender, e) =>
+                    {
+                        LoadModel.ReceiveSize = 0;
+                        LoadModel.TotalSize = e.TotalBytesToReceive;
+                        LoadModel.DownloadState = "0KB / 0MB";
+
+                        LoadModel.ProgressValue = 0;
+
+                        AppendLogger($"🔔 Marne.dll文件大小：{MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}");
+                    };
+                    downloader.DownloadProgressChanged += (sender, e) =>
+                    {
+                        LoadModel.ReceiveSize = e.ReceivedBytesSize;
+                        LoadModel.DownloadState = $"{MiscUtil.GetFileForamtSize(e.ReceivedBytesSize)} / {MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}";
+
+                        LoadModel.ProgressValue = LoadModel.ReceiveSize / LoadModel.TotalSize;
+                    };
+                    downloader.DownloadFileCompleted += (sender, e) =>
+                    {
+                        AppendLogger("✔️ Marne.dll文件下载完成");
+                    };
+
+                    await downloader.StartAsync();
                 }
                 else
                 {
@@ -140,9 +178,37 @@ public partial class LoadWindow : Window
                 var marneExeMD5 = FileHelper.GetFileMD5(CoreUtil.File_Marne_MarneLauncher);
                 if (!webMarneExeMD5.Equals(marneExeMD5))
                 {
-                    // 开始下载最新版本Marne.dll
+                    // 开始下载最新版本arneLauncher.exe
                     AppendLogger($"📢 发现新版本MarneLauncher.exe文件，正在下载最新版本");
 
+                    var downloader = DownloadBuilder.New()
+                        .WithUrl(webMarneExe)
+                        .WithFileLocation(CoreUtil.File_Marne_MarneLauncher)
+                        .Build();
+
+                    downloader.DownloadStarted += (sender, e) =>
+                    {
+                        LoadModel.ReceiveSize = 0;
+                        LoadModel.TotalSize = e.TotalBytesToReceive;
+                        LoadModel.DownloadState = "0KB / 0MB";
+
+                        LoadModel.ProgressValue = 0;
+
+                        AppendLogger($"🔔 arneLauncher.exe文件大小：{MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}");
+                    };
+                    downloader.DownloadProgressChanged += (sender, e) =>
+                    {
+                        LoadModel.ReceiveSize = e.ReceivedBytesSize;
+                        LoadModel.DownloadState = $"{MiscUtil.GetFileForamtSize(e.ReceivedBytesSize)} / {MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}";
+
+                        LoadModel.ProgressValue = LoadModel.ReceiveSize / LoadModel.TotalSize;
+                    };
+                    downloader.DownloadFileCompleted += (sender, e) =>
+                    {
+                        AppendLogger("✔️ arneLauncher.exe文件下载完成");
+                    };
+
+                    await downloader.StartAsync();
                 }
                 else
                 {
@@ -159,6 +225,9 @@ public partial class LoadWindow : Window
             // 本地保存Mod文件路径
             var saveModPath = Path.Combine(CoreUtil.Dir_FrostyMod_Mods_Bf1, modName);
 
+            AppendLogger($"🔔 Mod中文名称：{webModName}");
+            AppendLogger($"🔔 Mod文件名称：{modName}");
+
             // 判断Mod文件是否被占用
             if (!FileHelper.IsOccupied(saveModPath))
             {
@@ -173,7 +242,34 @@ public partial class LoadWindow : Window
                     FileHelper.ClearDirectory(CoreUtil.Dir_FrostyMod_Mods_Bf1);
                     AppendLogger("✔️ 清空Mod文件夹旧版Mod文件成功");
 
+                    var downloader = DownloadBuilder.New()
+                        .WithUrl(webModFile)
+                        .WithFileLocation(saveModPath)
+                        .Build();
 
+                    downloader.DownloadStarted += (sender, e) =>
+                    {
+                        LoadModel.ReceiveSize = 0;
+                        LoadModel.TotalSize = e.TotalBytesToReceive;
+                        LoadModel.DownloadState = "0KB / 0MB";
+
+                        LoadModel.ProgressValue = 0;
+
+                        AppendLogger($"🔔 Mod文件大小：{MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}");
+                    };
+                    downloader.DownloadProgressChanged += (sender, e) =>
+                    {
+                        LoadModel.ReceiveSize = e.ReceivedBytesSize;
+                        LoadModel.DownloadState = $"{MiscUtil.GetFileForamtSize(e.ReceivedBytesSize)} / {MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}";
+
+                        LoadModel.ProgressValue = LoadModel.ReceiveSize / LoadModel.TotalSize;
+                    };
+                    downloader.DownloadFileCompleted += (sender, e) =>
+                    {
+                        AppendLogger("✔️ Mod文件下载完成");
+                    };
+
+                    await downloader.StartAsync();
                 }
                 else
                 {
@@ -215,22 +311,6 @@ public partial class LoadWindow : Window
 
             // 创建FrostyMod配置文件
             var modConfig = new ModConfig();
-
-            AppendLogger($"🔔 Mod中文名称：{webModName}");
-            AppendLogger($"🔔 Mod文件名称：{modName}");
-
-            // 下载mod到 Mods\bf1 文件夹
-            AppendLogger("☁️ 开始下载Mod...");
-            var bytes = await HttpHelper.DownloadMod(webModFile);
-            if (bytes is null)
-            {
-                AppendLogger("❌ 下载Mod失败，初始化终止");
-                return;
-            }
-
-            AppendLogger("✔️ 下载Mod成功");
-            File.WriteAllBytes(saveModPath, bytes);
-            AppendLogger("✔️ 保存Mod到指定文件夹成功");
 
             // 设置Mod名称并启用
             modConfig.Games.bf1.Packs.Default = $"{modName}:True";
