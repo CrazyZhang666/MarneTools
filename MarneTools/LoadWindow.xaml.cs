@@ -37,7 +37,7 @@ public partial class LoadWindow : Window
     {
         this.Dispatcher.Invoke(() =>
         {
-            TextBox_Logger.AppendText($"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  {log}{Environment.NewLine}");
+            TextBox_Logger.AppendText($"{DateTime.Now:T}  {log}{Environment.NewLine}");
         });
     }
 
@@ -56,30 +56,32 @@ public partial class LoadWindow : Window
                 AppendLogger("❌ 获取服务器配置信息失败，初始化终止");
                 return;
             }
-
-            var jsonNode = JsonNode.Parse(response.Content);
-
-            CoreUtil.ServerVersion = Version.Parse(jsonNode["Version"].GetValue<string>());
-
-            CoreUtil.WebUpdate = jsonNode["Update"].GetValue<string>();
-            CoreUtil.WebModName = jsonNode["ModName"].GetValue<string>();
-            CoreUtil.WebModFile = jsonNode["ModFile"].GetValue<string>();
-
             AppendLogger("✔️ 获取服务器配置信息成功");
-            AppendLogger($"🔔 服务器版本号：{CoreUtil.ServerVersion}");
-            AppendLogger($"🔔 客户端版本号：{CoreUtil.ClientVersion}");
 
-            // 发现新版本
-            if (CoreUtil.ServerVersion > CoreUtil.ClientVersion)
+            // 开始解析服务器配置文件
+            var jsonNode = JsonNode.Parse(response.Content);
+            AppendLogger("✔️ 解析服务器配置信息成功");
+
+            // 获取服务器版本号
+            var webVersion = Version.Parse(jsonNode["Version"].GetValue<string>());
+
+            AppendLogger($"🔔 客户端版本号：{CoreUtil.ClientVersion}");
+            AppendLogger($"🔔 服务器版本号：{webVersion}");
+
+            // 如果发现新版本
+            if (webVersion > CoreUtil.ClientVersion)
             {
                 AppendLogger($"📢 发现新版本，请下载最新版本");
+
+                // 工具箱更新下载网盘地址
+                var webUpdate = jsonNode["Update"].GetValue<string>();
 
                 this.Dispatcher.Invoke(() =>
                 {
                     if (MessageBox.Show("发现新版本，点击确认键下载最新版本", "更新提示",
                         MessageBoxButton.OKCancel, MessageBoxImage.Information) == MessageBoxResult.OK)
                     {
-                        ProcessHelper.OpenLink(CoreUtil.WebUpdate);
+                        ProcessHelper.OpenLink(webUpdate);
                     }
 
                     Application.Current.Shutdown();
@@ -88,22 +90,114 @@ public partial class LoadWindow : Window
                 return;
             }
 
-            // 强制关闭FrostyModManager程序
+            AppendLogger("🔔 恭喜，你的工具箱版本是最新版本");
+
+            /////////////////////////////////////////////////////
+
+            // Marne.dll更新下载地址、MD5
+            var webMarneDll = jsonNode["MarneDll"].GetValue<string>();
+            var webMarneDllMD5 = jsonNode["MarneDllMD5"].GetValue<string>();
+
+            // MarneLauncher.exe更新下载地址、MD5
+            var webMarneExe = jsonNode["MarneExe"].GetValue<string>();
+            var webMarneExeMD5 = jsonNode["MarneExeMD5"].GetValue<string>();
+
+            // Mod中文名称
+            var webModName = jsonNode["ModName"].GetValue<string>();
+
+            // Mod文件更新下载地址、MD5
+            var webModFile = jsonNode["ModFile"].GetValue<string>();
+            var webModFileMD5 = jsonNode["ModFileMD5"].GetValue<string>();
+
+            /////////////////////////////////////////////////////
+
+            // 判断Marne.dll文件是否被占用
+            if (!FileHelper.IsOccupied(CoreUtil.File_Marne_MarneDll))
+            {
+                // 开始检查Marne.dll是否需要更新
+                var marneDllMD5 = FileHelper.GetFileMD5(CoreUtil.File_Marne_MarneDll);
+                if (!webMarneDllMD5.Equals(marneDllMD5))
+                {
+                    // 开始下载最新版本Marne.dll
+                    AppendLogger($"📢 发现新版本Marne.dll文件，正在下载最新版本");
+
+
+                }
+                else
+                {
+                    AppendLogger("🔔 恭喜，你的Marne.dll文件是最新版本");
+                }
+            }
+            else
+            {
+                AppendLogger("⚠️ Marne.dll文件被占用，跳过检查更新");
+            }
+
+            // 判断MarneLauncher.exe文件是否被占用
+            if (!FileHelper.IsOccupied(CoreUtil.File_Marne_MarneLauncher))
+            {
+                // 开始检查MarneLauncher.exe是否需要更新
+                var marneExeMD5 = FileHelper.GetFileMD5(CoreUtil.File_Marne_MarneLauncher);
+                if (!webMarneExeMD5.Equals(marneExeMD5))
+                {
+                    // 开始下载最新版本Marne.dll
+                    AppendLogger($"📢 发现新版本MarneLauncher.exe文件，正在下载最新版本");
+
+                }
+                else
+                {
+                    AppendLogger("🔔 恭喜，你的MarneLauncher.exe文件是最新版本");
+                }
+            }
+            else
+            {
+                AppendLogger("⚠️ MarneLauncher.exe文件被占用，跳过检查更新");
+            }
+
+            // 获取Mod文件名称
+            var modName = Path.GetFileName(webModFile);
+            // 本地保存Mod文件路径
+            var saveModPath = Path.Combine(CoreUtil.Dir_FrostyMod_Mods_Bf1, modName);
+
+            // 判断Mod文件是否被占用
+            if (!FileHelper.IsOccupied(saveModPath))
+            {
+                // 开始检查Mod文件是否需要更新
+                var modFileMD5 = FileHelper.GetFileMD5(saveModPath);
+                if (!webModFileMD5.Equals(modFileMD5))
+                {
+                    // 开始下载最新版本Mod文件
+                    AppendLogger($"📢 发现新版本Mod文件，正在下载最新版本");
+
+                    // 清空旧版Mod文件夹
+                    FileHelper.ClearDirectory(CoreUtil.Dir_FrostyMod_Mods_Bf1);
+                    AppendLogger("✔️ 清空Mod文件夹旧版Mod文件成功");
+
+
+                }
+                else
+                {
+                    AppendLogger("🔔 恭喜，你的Mod文件是最新版本");
+                }
+            }
+            else
+            {
+                AppendLogger("⚠️ Mod文件被占用，跳过检查更新");
+            }
+
+            /////////////////////////////////////////////////////
+
+            // 关闭FrostyModManager程序
             ProcessHelper.CloseProcessNoHit(CoreUtil.Name_FrostyModManager);
             AppendLogger("✔️ 关闭FrostyModManager程序成功");
 
-            // 清空旧版Mod文件夹
-            FileHelper.ClearDirectory(CoreUtil.Dir_FrostyMod_Mods_Bf1);
-            AppendLogger("✔️ 清空旧版Mod文件夹成功");
-
             // 通过注册表获取战地1安装目录
             using var bf1Reg = Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\EA Games\\Battlefield 1");
-            if (bf1Reg is  null)
+            if (bf1Reg is null)
             {
                 AppendLogger("❌ 获取战地1注册表失败，初始化终止");
                 return;
             }
-
             AppendLogger("✔️ 获取战地1注册表成功");
 
             var installDir = bf1Reg.GetValue("Install Dir") as string;
@@ -112,30 +206,30 @@ public partial class LoadWindow : Window
                 AppendLogger("❌ 获取战地1注册表安装目录失败，初始化终止");
                 return;
             }
-
-            CoreUtil.BF1InstallDir = Path.GetDirectoryName(installDir);
             AppendLogger("✔️ 获取战地1注册表安装目录成功");
 
+            CoreUtil.BF1InstallDir = Path.GetDirectoryName(installDir);
             AppendLogger($"🔔 此电脑战地1安装目录：{CoreUtil.BF1InstallDir}");
 
+            /////////////////////////////////////////////////////
+
+            // 创建FrostyMod配置文件
             var modConfig = new ModConfig();
 
-            // 获取Mod名称
-            var modName = Path.GetFileName(CoreUtil.WebModFile);
-            AppendLogger($"🔔 Mod中文名称：{CoreUtil.WebModName}");
+            AppendLogger($"🔔 Mod中文名称：{webModName}");
             AppendLogger($"🔔 Mod文件名称：{modName}");
 
             // 下载mod到 Mods\bf1 文件夹
             AppendLogger("☁️ 开始下载Mod...");
-            var bytes = await HttpHelper.DownloadMod(CoreUtil.WebModFile);
-            if (bytes is  null)
+            var bytes = await HttpHelper.DownloadMod(webModFile);
+            if (bytes is null)
             {
                 AppendLogger("❌ 下载Mod失败，初始化终止");
                 return;
             }
 
             AppendLogger("✔️ 下载Mod成功");
-            File.WriteAllBytes(Path.Combine(CoreUtil.Dir_FrostyMod_Mods_Bf1, modName), bytes);
+            File.WriteAllBytes(saveModPath, bytes);
             AppendLogger("✔️ 保存Mod到指定文件夹成功");
 
             // 设置Mod名称并启用
@@ -148,20 +242,20 @@ public partial class LoadWindow : Window
             File.WriteAllText(CoreUtil.File_FrostyMod_Frosty_ManagerConfig, JsonHelper.JsonSerialize(modConfig));
             AppendLogger("✔️ 写入FrostyModManager配置文件成功");
 
-            AppendLogger("👏 初始化成功，正在跳转主程序");
+            AppendLogger("👏 初始化成功，正在准备启动主程序");
 
-            ///////////////////////////////////////
+            /////////////////////////////////////////////////////
 
-            this.Dispatcher.Invoke(() =>
-            {
-                var mainWindow = new MainWindow();
-                // 显示主窗口
-                mainWindow.Show();
-                // 转移主程序控制权
-                Application.Current.MainWindow = mainWindow;
-                // 关闭初始化窗口
-                this.Close();
-            });
+            //this.Dispatcher.Invoke(() =>
+            //{
+            //    var mainWindow = new MainWindow();
+            //    // 显示主窗口
+            //    mainWindow.Show();
+            //    // 转移主程序控制权
+            //    Application.Current.MainWindow = mainWindow;
+            //    // 关闭初始化窗口
+            //    this.Close();
+            //});
         }
         catch (Exception ex)
         {

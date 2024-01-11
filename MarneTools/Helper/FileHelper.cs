@@ -2,6 +2,8 @@
 
 public static class FileHelper
 {
+    private static readonly MD5 md5 = MD5.Create();
+
     /// <summary>
     /// 创建文件夹，如果文件夹存在则不创建
     /// </summary>
@@ -37,5 +39,48 @@ public static class FileHelper
             }
         }
         catch { }
+    }
+
+    /// <summary>
+    /// 判断文件是否被占用
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <returns></returns>
+    public static bool IsOccupied(string filePath)
+    {
+        if (!File.Exists(filePath))
+            return false;
+
+        FileStream stream = null;
+
+        try
+        {
+            stream = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+            return false;
+        }
+        catch
+        {
+            return true;
+        }
+        finally
+        {
+            stream?.Close();
+        }
+    }
+
+    /// <summary>
+    /// 获取文件MD5值
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <returns></returns>
+    public static string GetFileMD5(string filePath)
+    {
+        if (!File.Exists(filePath))
+            return string.Empty;
+
+        using var fileStream = File.OpenRead(filePath);
+        var fileMD5 = md5.ComputeHash(fileStream);
+
+        return BitConverter.ToString(fileMD5).Replace("-", "");
     }
 }

@@ -16,6 +16,7 @@ global using System.Text.Json.Serialization;
 global using System.Text.Json;
 global using System.Text.Unicode;
 global using System.Text.Json.Nodes;
+global using System.Security.Cryptography;
 global using Microsoft.Win32;
 
 global using CommunityToolkit.Mvvm.Input;

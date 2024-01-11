@@ -44,7 +44,7 @@ public partial class LaunchView : UserControl
     [RelayCommand]
     private void RunMarneLauncher()
     {
-        ProcessHelper.OpenProcess(CoreUtil.File_MarneLauncher);
+        ProcessHelper.OpenProcess(CoreUtil.File_Marne_MarneLauncher);
     }
 
     [RelayCommand]
@@ -65,7 +65,7 @@ public partial class LaunchView : UserControl
             return;
         }
 
-        ProcessHelper.OpenProcess(CoreUtil.File_FrostyModManager);
+        ProcessHelper.OpenProcess(CoreUtil.File_FrostyMod_FrostyModManager);
     }
 
     [RelayCommand]
