@@ -9,8 +9,6 @@ public static class CoreUtil
 
     public static string BF1InstallDir { get; set; }
 
-    public const string MainAppWindowName = "战地1马恩工具箱 v";
-
     public const string RadminInstallPath = "C:\\Program Files (x86)\\Radmin VPN\\RvRvpnGui.exe";
 
     public const string Name_RadminLAN = "RvRvpnGui";
@@ -39,7 +37,7 @@ public static class CoreUtil
 
     public static string WebUpdate { get; set; }
     public static string WebModName { get; set; }
-    public static string WebModDownload { get; set; }
+    public static string WebModFile { get; set; }
 
     static CoreUtil()
     {

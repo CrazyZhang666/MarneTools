@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-
-namespace MarneTools.Models;
+﻿namespace MarneTools.Models;
 
 public partial class MainModel : ObservableObject
 {
