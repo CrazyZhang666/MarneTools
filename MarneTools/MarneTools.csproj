@@ -34,7 +34,6 @@
         <PackageReference Include="Downloader" Version="3.0.6" />
         <PackageReference Include="Notification.Wpf" Version="8.0.0" />
         <PackageReference Include="RestSharp" Version="110.2.0" />
-        <PackageReference Include="XamlAnimatedGif" Version="2.2.0" />
     </ItemGroup>
 
     <ItemGroup>
