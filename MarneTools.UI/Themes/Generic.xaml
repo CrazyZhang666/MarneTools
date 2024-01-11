@@ -4,8 +4,11 @@
 
         <ResourceDictionary Source="/MarneTools.UI;component/Styles/Global.xaml" />
         <ResourceDictionary Source="/MarneTools.UI;component/Styles/Image.xaml" />
-
         <ResourceDictionary Source="/MarneTools.UI;component/Styles/IconFont.xaml" />
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/ScrollViewer.xaml" />
+
+        <ResourceDictionary Source="/MarneTools.UI;component/Styles/TextBox.xaml" />
+
         <ResourceDictionary Source="/MarneTools.UI;component/Styles/IconButton.xaml" />
         <ResourceDictionary Source="/MarneTools.UI;component/Styles/NavMenu.xaml" />
         <ResourceDictionary Source="/MarneTools.UI;component/Styles/StateCard.xaml" />

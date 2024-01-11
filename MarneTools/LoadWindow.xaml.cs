@@ -105,6 +105,9 @@ public partial class LoadWindow : Window
 
             /////////////////////////////////////////////////////
 
+            // 海报图片链接
+            CoreUtil.PosterUrl = jsonNode["Poster"].GetValue<string>();
+
             // Marne.dll更新下载地址、MD5
             var webMarneDll = jsonNode["MarneDll"].GetValue<string>();
             var webMarneDllMD5 = jsonNode["MarneDllMD5"].GetValue<string>();

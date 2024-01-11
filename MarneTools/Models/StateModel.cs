@@ -22,4 +22,9 @@ public partial class StateModel : ObservableObject
 
     [ObservableProperty]
     private bool isBF1Run;
+
+    ///////////////////////
+
+    [ObservableProperty]
+    private string version;
 }

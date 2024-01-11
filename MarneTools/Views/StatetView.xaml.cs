@@ -1,6 +1,7 @@
 ﻿using MarneTools.Utils;
 using MarneTools.Models;
 using MarneTools.Helper;
+using System.Windows.Navigation;
 
 namespace MarneTools.Views;
 
@@ -24,6 +25,8 @@ public partial class StatetView : UserControl
             Name = "CheckStateThread",
             IsBackground = true
         }.Start();
+
+        StateModel.Version = $"v{CoreUtil.ClientVersion}";
     }
 
     /// <summary>
@@ -46,5 +49,16 @@ public partial class StatetView : UserControl
 
             Thread.Sleep(1000);
         }
+    }
+
+    /// <summary>
+    /// 超链接请求导航事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+    {
+        ProcessHelper.OpenLink(e.Uri.OriginalString);
+        e.Handled = true;
     }
 }

@@ -5,14 +5,35 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
-    d:DesignHeight="120"
+    d:DesignHeight="90"
     d:DesignWidth="800"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
     <DockPanel Background="#F7F7F7">
         <!--  /////////////  -->
-        <WrapPanel DockPanel.Dock="Right" Orientation="Horizontal" />
+        <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Right">
+            <StackPanel
+                Margin="5,0,5,5"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <TextBlock Margin="5,0,0,0" Text="{Binding StateModel.Version, FallbackValue='v0.0.0.0'}" />
+            </StackPanel>
+            <StackPanel
+                Margin="5,0,5,5"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <TextBlock Margin="7,0,0,0">
+                    <Hyperlink NavigateUri="https://marne.io" RequestNavigate="Hyperlink_RequestNavigate">Marne</Hyperlink>
+                </TextBlock>
+                <TextBlock Margin="7,0,0,0">
+                    <Hyperlink NavigateUri="https://github.com/CrazyZhang666/MarneTools" RequestNavigate="Hyperlink_RequestNavigate">GitHub</Hyperlink>
+                </TextBlock>
+                <TextBlock Margin="7,0,0,0">
+                    <Hyperlink NavigateUri="https://battlefield.vip/" RequestNavigate="Hyperlink_RequestNavigate">工具箱官网</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
         <!--  /////////////  -->
         <StackPanel Orientation="Horizontal">
             <ui:StateCard

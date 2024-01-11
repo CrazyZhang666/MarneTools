@@ -4,6 +4,17 @@
     <SolidColorBrush x:Key="Red" Color="#F56C6C" />
     <SolidColorBrush x:Key="Orange" Color="#E6A23C" />
 
+    <!--  超链接全局样式  -->
+    <Style TargetType="{x:Type Hyperlink}">
+        <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="#2196F3" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="#E91E63" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <!--  ToolTip背景色为白色  -->
     <Style TargetType="{x:Type ToolTip}">
         <Setter Property="Background" Value="White" />
