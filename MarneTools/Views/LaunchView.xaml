@@ -11,13 +11,14 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <UniformGrid Margin="5" Columns="3">
-        <StackPanel>
-            <TextBlock
-                Margin="5"
-                FontSize="18"
-                FontWeight="Bold"
-                Text="第一步" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--  选择区域  -->
+        <UniformGrid Margin="5" Columns="3">
             <ui:ImageCard Title="Radmin LAN" Source="/Assets/Images/RadminLAN.png">
                 <ui:ImageCard.Description>
                     用于加入虚拟局域网，这样才能进入没有公网IP的Marne服务器，如果你加入的是公网IP服务器，则不需要开启RadminLAN
@@ -38,14 +39,7 @@
                     </WrapPanel>
                 </ui:ImageCard.CardContent>
             </ui:ImageCard>
-        </StackPanel>
 
-        <StackPanel>
-            <TextBlock
-                Margin="5"
-                FontSize="18"
-                FontWeight="Bold"
-                Text="第二步" />
             <ui:ImageCard Title="Marne Mod" Source="/Assets/Images/MarneLauncher.png">
                 <ui:ImageCard.Description>
                     用于加入Marne专用服务器，与EA服务器无关，数据相互独立，离线模式也可使用
@@ -66,14 +60,7 @@
                     </WrapPanel>
                 </ui:ImageCard.CardContent>
             </ui:ImageCard>
-        </StackPanel>
 
-        <StackPanel>
-            <TextBlock
-                Margin="5"
-                FontSize="18"
-                FontWeight="Bold"
-                Text="第三步" />
             <ui:ImageCard Title="Frosty Mod Manager" Source="/Assets/Images/FrostyModManager.png">
                 <ui:ImageCard.Description>
                     用于启动战地1Mod工具，若要进入Mod服则必须使用此工具启动，否则Mod不会生效
@@ -94,7 +81,7 @@
                     </WrapPanel>
                 </ui:ImageCard.CardContent>
             </ui:ImageCard>
-        </StackPanel>
-    </UniformGrid>
+        </UniformGrid>
+    </Grid>
 
 </UserControl>
