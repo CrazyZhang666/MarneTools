@@ -1,6 +1,6 @@
 ﻿namespace MarneTools.Models;
 
-public partial class MainModel : ObservableObject
+public partial class StateModel : ObservableObject
 {
     [ObservableProperty]
     private bool isRadminRun;

@@ -3,11 +3,10 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
-    d:DesignHeight="600"
-    d:DesignWidth="900"
+    d:DesignHeight="200"
+    d:DesignWidth="800"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
@@ -18,20 +17,21 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <!--  选择区域  -->
-        <UniformGrid Margin="5" Columns="3">
-            <ui:ImageCard Title="Radmin LAN" Source="/Assets/Images/RadminLAN.png">
+        <UniformGrid Columns="3">
+            <ui:ImageCard Title="Radmin LAN" Source="/MarneTools;component/Assets/Images/RadminLAN.png">
                 <ui:ImageCard.Description>
                     用于加入虚拟局域网，这样才能进入没有公网IP的Marne服务器，如果你加入的是公网IP服务器，则不需要开启RadminLAN
                 </ui:ImageCard.Description>
                 <ui:ImageCard.CardContent>
                     <WrapPanel HorizontalAlignment="Right">
                         <ui:IconButton
-                            Margin="5,5,0,5"
+                            Margin="5,5,0,0"
                             Background="{StaticResource Blue}"
                             Command="{Binding RunRadminVPNCommand}"
                             Content="启动"
                             Icon="&#xF78C;" />
                         <ui:IconButton
+                            Margin="5,5,0,0"
                             Background="{StaticResource Red}"
                             Command="{Binding CloseRadminVPNCommand}"
                             Content="关闭"
@@ -40,19 +40,28 @@
                 </ui:ImageCard.CardContent>
             </ui:ImageCard>
 
-            <ui:ImageCard Title="Marne Mod" Source="/Assets/Images/MarneLauncher.png">
+            <ui:ImageCard
+                Title="Marne Mod"
+                Margin="1,5,1,5"
+                Source="/MarneTools;component/Assets/Images/MarneLauncher.png">
                 <ui:ImageCard.Description>
                     用于加入Marne专用服务器，与EA服务器无关，数据相互独立，离线模式也可使用
                 </ui:ImageCard.Description>
                 <ui:ImageCard.CardContent>
                     <WrapPanel HorizontalAlignment="Right">
                         <ui:IconButton
-                            Margin="5,5,0,5"
+                            Margin="5,5,0,0"
+                            Background="{StaticResource Orange}"
+                            Command="{Binding RunBattlefieldChatCommand}"
+                            Content="中文聊天" />
+                        <ui:IconButton
+                            Margin="5,5,0,0"
                             Background="{StaticResource Blue}"
                             Command="{Binding RunMarneLauncherCommand}"
                             Content="启动"
                             Icon="&#xF78C;" />
                         <ui:IconButton
+                            Margin="5,5,0,0"
                             Background="{StaticResource Red}"
                             Command="{Binding CloseMarneLauncherCommand}"
                             Content="关闭"
@@ -61,19 +70,20 @@
                 </ui:ImageCard.CardContent>
             </ui:ImageCard>
 
-            <ui:ImageCard Title="Frosty Mod Manager" Source="/Assets/Images/FrostyModManager.png">
+            <ui:ImageCard Title="Frosty Mod Manager" Source="/MarneTools;component/Assets/Images/FrostyModManager.png">
                 <ui:ImageCard.Description>
                     用于启动战地1Mod工具，若要进入Mod服则必须使用此工具启动，否则Mod不会生效
                 </ui:ImageCard.Description>
                 <ui:ImageCard.CardContent>
                     <WrapPanel HorizontalAlignment="Right">
                         <ui:IconButton
-                            Margin="5,5,0,5"
+                            Margin="5,5,0,0"
                             Background="{StaticResource Blue}"
                             Command="{Binding RunFrostyModManagerCommand}"
                             Content="启动"
                             Icon="&#xF78C;" />
                         <ui:IconButton
+                            Margin="5,5,0,0"
                             Background="{StaticResource Red}"
                             Command="{Binding CloseFrostyModManagerCommand}"
                             Content="关闭"

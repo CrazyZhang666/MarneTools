@@ -2,6 +2,7 @@
 
     <SolidColorBrush x:Key="Blue" Color="#409EFF" />
     <SolidColorBrush x:Key="Red" Color="#F56C6C" />
+    <SolidColorBrush x:Key="Orange" Color="#E6A23C" />
 
     <!--  ToolTip背景色为白色  -->
     <Style TargetType="{x:Type ToolTip}">

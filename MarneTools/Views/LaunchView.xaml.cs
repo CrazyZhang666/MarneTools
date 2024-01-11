@@ -1,6 +1,5 @@
-﻿using CommunityToolkit.Mvvm.Input;
+﻿using MarneTools.Utils;
 using MarneTools.Helper;
-using MarneTools.Utils;
 
 namespace MarneTools.Views;
 
@@ -51,6 +50,12 @@ public partial class LaunchView : UserControl
     private void CloseMarneLauncher()
     {
         ProcessHelper.CloseProcess(CoreUtil.Name_MarneLauncher);
+    }
+
+    [RelayCommand]
+    private void RunBattlefieldChat()
+    {
+        ProcessHelper.OpenProcess(CoreUtil.File_BattlefieldChat);
     }
     #endregion
 

@@ -38,6 +38,7 @@
         <Grid Grid.Row="1" Margin="5,0,5,5">
             <ProgressBar
                 Height="35"
+                Background="#F7F7F7"
                 Maximum="{Binding LoadModel.TotalSize}"
                 Minimum="0"
                 SmallChange="1"

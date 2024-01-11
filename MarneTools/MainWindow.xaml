@@ -6,10 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ntf="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
+    xmlns:views="clr-namespace:MarneTools.Views"
     Name="Window_Main"
     Title="战地1马恩工具箱 - 主程序"
-    Width="900"
-    Height="600"
+    Width="800"
+    Height="550"
     Closing="Window_Closing"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     Loaded="Window_Loaded"
@@ -22,89 +23,15 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-
             <!--  顶部状态栏  -->
-            <StackPanel
-                Grid.ColumnSpan="2"
-                Background="#F7F7F7"
-                Orientation="Horizontal">
-                <ui:StateCard
-                    Title="Radmin LAN"
-                    IsRunning="{Binding MainModel.IsRadminRun}"
-                    Source="/Assets/Images/RadminLAN.png" />
-                <ui:StateCard
-                    Title="Marne Launcher"
-                    IsRunning="{Binding MainModel.IsMarneRun}"
-                    Source="/Assets/Images/MarneLauncher.png" />
-                <ui:StateCard
-                    Title="Frosty Mod Manager"
-                    IsRunning="{Binding MainModel.IsFrostyModRun}"
-                    Source="/Assets/Images/FrostyModManager.png" />
-                <ui:StateCard
-                    Title="Origin"
-                    IsRunning="{Binding MainModel.IsOriginRun}"
-                    Source="/Assets/Images/Origin.png" />
-                <ui:StateCard
-                    Title="Steam"
-                    IsRunning="{Binding MainModel.IsSteamRun}"
-                    Source="/Assets/Images/Steam.png" />
-                <ui:StateCard
-                    Title="EA App"
-                    IsRunning="{Binding MainModel.IsEaAppRun}"
-                    Source="/Assets/Images/EaApp.png" />
-                <ui:StateCard
-                    Title="Battlefield 1"
-                    IsRunning="{Binding MainModel.IsBF1Run}"
-                    Source="/Assets/Images/BF1.png" />
-            </StackPanel>
-
-            <!--  页面导航菜单  -->
-            <Border
-                Grid.Row="1"
-                Margin="0,5,0,5"
-                Padding="5,0,5,0"
-                BorderBrush="#BFBFBF"
-                BorderThickness="0,0,1,0">
-                <StackPanel>
-                    <ui:NavMenu
-                        Command="{Binding NavigateCommand}"
-                        CommandParameter="LaunchView"
-                        Content="启动联机"
-                        GroupName="NavMenu"
-                        Icon="&#xE734;"
-                        IsChecked="True" />
-                    <ui:NavMenu
-                        Command="{Binding NavigateCommand}"
-                        CommandParameter="ServerView"
-                        Content="游戏列表"
-                        GroupName="NavMenu"
-                        Icon="&#xE734;" />
-                    <ui:NavMenu
-                        Command="{Binding NavigateCommand}"
-                        CommandParameter="ToolView"
-                        Content="工具箱"
-                        GroupName="NavMenu"
-                        Icon="&#xE734;" />
-                    <ui:NavMenu
-                        Command="{Binding NavigateCommand}"
-                        CommandParameter="AboutView"
-                        Content="关于"
-                        GroupName="NavMenu"
-                        Icon="&#xE734;" />
-                </StackPanel>
-            </Border>
-            <!--  页面显示区域  -->
-            <ContentControl
-                x:Name="ContentControl_NavRegion"
-                Grid.Row="1"
-                Grid.Column="1"
-                FocusVisualStyle="{x:Null}" />
+            <views:StatetView />
+            <!--  主要功能区  -->
+            <views:LaunchView Grid.Row="1" />
+            <!--  宣传海报区域  -->
+            <views:PosterView Grid.Row="2" />
         </Grid>
         <!--  通知区域  -->
         <ntf:NotificationArea

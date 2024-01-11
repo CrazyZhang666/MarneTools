@@ -49,6 +49,9 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5" />
                         </Trigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Icon, Converter={StaticResource IsNullOrWhiteSpaceConverter}}" Value="True">
+                            <Setter TargetName="icon" Property="Margin" Value="0" />
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

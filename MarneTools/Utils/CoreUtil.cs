@@ -5,6 +5,10 @@ public static class CoreUtil
     public static bool IsAppRunning { get; set; } = true;
     public static Version ClientVersion { get; private set; }
 
+    public static string PosterUrl { get; set; }
+
+    ///////////////////////////////////////////////
+
     public static string BF1InstallDir { get; set; }
 
     public const string RadminInstallPath = "C:\\Program Files (x86)\\Radmin VPN\\RvRvpnGui.exe";
