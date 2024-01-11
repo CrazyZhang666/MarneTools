@@ -122,6 +122,15 @@ public partial class LoadWindow : Window
 
             /////////////////////////////////////////////////////
 
+            var downloadOpt = new DownloadConfiguration()
+            {
+                BufferBlockSize = 10240,
+                MaximumBytesPerSecond = 1024 * 1024 * 50,
+                MaximumMemoryBufferBytes = 1024 * 1024 * 50,
+                ClearPackageOnCompletionWithFailure = true,
+                ReserveStorageSpaceBeforeStartingDownload = true
+            };
+
             // 判断Marne.dll文件是否被占用
             if (!FileHelper.IsOccupied(CoreUtil.File_Marne_MarneDll))
             {
@@ -135,6 +144,7 @@ public partial class LoadWindow : Window
                     var downloader = DownloadBuilder.New()
                         .WithUrl(webMarneDll)
                         .WithFileLocation(CoreUtil.File_Marne_MarneDll)
+                        .WithConfiguration(downloadOpt)
                         .Build();
 
                     downloader.DownloadStarted += (sender, e) =>
@@ -184,6 +194,7 @@ public partial class LoadWindow : Window
                     var downloader = DownloadBuilder.New()
                         .WithUrl(webMarneExe)
                         .WithFileLocation(CoreUtil.File_Marne_MarneLauncher)
+                        .WithConfiguration(downloadOpt)
                         .Build();
 
                     downloader.DownloadStarted += (sender, e) =>
@@ -225,9 +236,6 @@ public partial class LoadWindow : Window
             // 本地保存Mod文件路径
             var saveModPath = Path.Combine(CoreUtil.Dir_FrostyMod_Mods_Bf1, modName);
 
-            AppendLogger($"🔔 Mod中文名称：{webModName}");
-            AppendLogger($"🔔 Mod文件名称：{modName}");
-
             // 判断Mod文件是否被占用
             if (!FileHelper.IsOccupied(saveModPath))
             {
@@ -245,6 +253,7 @@ public partial class LoadWindow : Window
                     var downloader = DownloadBuilder.New()
                         .WithUrl(webModFile)
                         .WithFileLocation(saveModPath)
+                        .WithConfiguration(downloadOpt)
                         .Build();
 
                     downloader.DownloadStarted += (sender, e) =>
@@ -287,6 +296,9 @@ public partial class LoadWindow : Window
             ProcessHelper.CloseProcessNoHit(CoreUtil.Name_FrostyModManager);
             AppendLogger("✔️ 关闭FrostyModManager程序成功");
 
+            AppendLogger($"🔔 Mod中文名称：{webModName}");
+            AppendLogger($"🔔 Mod文件名称：{modName}");
+
             // 通过注册表获取战地1安装目录
             using var bf1Reg = Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\EA Games\\Battlefield 1");
             if (bf1Reg is null)
@@ -326,16 +338,16 @@ public partial class LoadWindow : Window
 
             /////////////////////////////////////////////////////
 
-            //this.Dispatcher.Invoke(() =>
-            //{
-            //    var mainWindow = new MainWindow();
-            //    // 显示主窗口
-            //    mainWindow.Show();
-            //    // 转移主程序控制权
-            //    Application.Current.MainWindow = mainWindow;
-            //    // 关闭初始化窗口
-            //    this.Close();
-            //});
+            this.Dispatcher.Invoke(() =>
+            {
+                var mainWindow = new MainWindow();
+                // 显示主窗口
+                mainWindow.Show();
+                // 转移主程序控制权
+                Application.Current.MainWindow = mainWindow;
+                // 关闭初始化窗口
+                this.Close();
+            });
         }
         catch (Exception ex)
         {
