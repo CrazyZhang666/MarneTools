@@ -4,6 +4,7 @@ using MarneTools.Helper;
 using MarneTools.Models;
 
 using Downloader;
+using MarneTools.Api;
 
 namespace MarneTools;
 
@@ -61,10 +62,10 @@ public partial class LoadWindow : Window
         {
             // 检查软件更新
             AppendLogger("☁️ 开始获取服务器配置信息...");
-            var response = await HttpHelper.GetServerConfig();
-            if (!response.IsSuccessful)
+            var response = await CoreApi.GetWebConfig();
+            if (!response.IsSuccess)
             {
-                AppendLogger("❌ 获取服务器配置信息失败，初始化终止");
+                AppendLogger($"❌ 获取服务器配置信息失败，初始化终止。异常信息：{response.Content}");
                 return;
             }
             AppendLogger("✔️ 获取服务器配置信息成功");
@@ -305,7 +306,7 @@ public partial class LoadWindow : Window
             AppendLogger($"🔔 Mod文件名称：{modName}");
 
             // 通过注册表获取战地1安装目录
-            using var bf1Reg = Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\EA Games\\Battlefield 1");
+            using var bf1Reg = Registry.LocalMachine.OpenSubKey("SOFTWARE\\EA Games\\Battlefield 1");
             if (bf1Reg is null)
             {
                 AppendLogger("❌ 获取战地1注册表失败，初始化终止");

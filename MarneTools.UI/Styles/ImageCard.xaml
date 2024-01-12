@@ -16,7 +16,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ImageCard}">
                     <Border
-                        Height="150"
+                        Height="135"
                         Padding="7"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"

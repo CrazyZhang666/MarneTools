@@ -24,7 +24,7 @@
                 IsEnabled="{Binding Source={x:Static utils:CoreUtil.IsLanServer}}"
                 Source="/MarneTools;component/Assets/Images/RadminLAN.png">
                 <ui:ImageCard.Description>
-                    用于加入虚拟局域网，这样才能进入没有公网IP的Marne服务器，如果你加入的是公网IP服务器，则不需要开启RadminLAN
+                    用于加入虚拟局域网，这样才能进入无公网IP的Marne服务器，否则不需要此工具
                 </ui:ImageCard.Description>
                 <ui:ImageCard.CardContent>
                     <WrapPanel HorizontalAlignment="Right">
