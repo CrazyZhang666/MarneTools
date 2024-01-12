@@ -33,6 +33,8 @@
             <views:LaunchView Grid.Row="1" />
             <!--  服务器信息区域  -->
             <views:ServerView Grid.Row="2" />
+            <!--  活动消息及注意事项区域  -->
+            <views:NoticeView Grid.Row="3" />
         </Grid>
         <!--  通知区域  -->
         <ntf:NotificationArea

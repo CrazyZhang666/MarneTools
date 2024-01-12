@@ -1,11 +1,11 @@
 ﻿namespace MarneTools.Views;
 
 /// <summary>
-/// PosterView.xaml 的交互逻辑
+/// NoticeView.xaml 的交互逻辑
 /// </summary>
-public partial class PosterView : UserControl
+public partial class NoticeView : UserControl
 {
-    public PosterView()
+    public NoticeView()
     {
         InitializeComponent();
     }

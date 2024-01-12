@@ -23,12 +23,12 @@
                     DockPanel.Dock="Left"
                     Source="{Binding ServerModel.MapImage}" />
                 <StackPanel
-                    Margin="10,0,20,0"
+                    Margin="10,0,10,0"
                     DockPanel.Dock="Right"
                     Orientation="Horizontal">
                     <TextBlock
                         VerticalAlignment="Center"
-                        d:Text="0 / 64"
+                        d:Text="0 / 64 [0]"
                         FontSize="14">
                         <TextBlock.Text>
                             <MultiBinding StringFormat="{}{0} / {1} [0]">
@@ -40,7 +40,7 @@
                     <Image
                         Height="12"
                         Margin="20,0,5,0"
-                        Source="/Assets/Images/Ping.png" />
+                        Source="/MarneTools;component/Assets/Images/Ping.png" />
                     <TextBlock
                         Width="25"
                         VerticalAlignment="Center"
@@ -56,7 +56,7 @@
                         FontWeight="Bold"
                         Text="{Binding ServerModel.Name}" />
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/Assets/Images/CN.png" />
+                        <Image Source="/MarneTools;component/Assets/Images/CN.png" />
                         <TextBlock
                             Margin="8,0,0,0"
                             VerticalAlignment="Center"
