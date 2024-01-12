@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
+    xmlns:utils="clr-namespace:MarneTools.Utils"
     d:DesignHeight="200"
     d:DesignWidth="800"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
@@ -18,7 +19,10 @@
         </Grid.RowDefinitions>
         <!--  选择区域  -->
         <UniformGrid Columns="3">
-            <ui:ImageCard Title="Radmin LAN" Source="/MarneTools;component/Assets/Images/RadminLAN.png">
+            <ui:ImageCard
+                Title="Radmin LAN"
+                IsEnabled="{Binding Source={x:Static utils:CoreUtil.IsLanServer}}"
+                Source="/MarneTools;component/Assets/Images/RadminLAN.png">
                 <ui:ImageCard.Description>
                     用于加入虚拟局域网，这样才能进入没有公网IP的Marne服务器，如果你加入的是公网IP服务器，则不需要开启RadminLAN
                 </ui:ImageCard.Description>

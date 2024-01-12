@@ -11,6 +11,7 @@
         <Setter Property="BorderBrush" Value="Gray" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Margin" Value="5" />
+        <Setter Property="Opacity" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ImageCard}">
@@ -21,6 +22,7 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="5"
+                        Opacity="{TemplateBinding Opacity}"
                         SnapsToDevicePixels="True">
                         <DockPanel>
                             <ContentPresenter Content="{TemplateBinding CardContent}" DockPanel.Dock="Bottom" />
@@ -44,6 +46,11 @@
                             </DockPanel>
                         </DockPanel>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

@@ -5,6 +5,7 @@ public static class CoreUtil
     public static bool IsAppRunning { get; set; } = true;
     public static Version ClientVersion { get; private set; }
 
+    public static bool IsLanServer { get; set; }
     public static string PosterUrl { get; set; }
 
     ///////////////////////////////////////////////
