@@ -30,6 +30,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Assets\Images\CN.png" />
+      <None Remove="Assets\Images\Ping.png" />
       <None Remove="Assets\Maps\MP_Alps.jpg" />
       <None Remove="Assets\Maps\MP_Amiens.jpg" />
       <None Remove="Assets\Maps\MP_Beachhead.jpg" />
@@ -74,10 +76,12 @@
     <ItemGroup>
         <Resource Include="Assets\Icons\Favicon.ico" />
         <Resource Include="Assets\Images\BF1.png" />
+        <Resource Include="Assets\Images\CN.png" />
         <Resource Include="Assets\Images\EaApp.png" />
         <Resource Include="Assets\Images\FrostyModManager.png" />
         <Resource Include="Assets\Images\MarneLauncher.png" />
         <Resource Include="Assets\Images\Origin.png" />
+        <Resource Include="Assets\Images\Ping.png" />
         <Resource Include="Assets\Images\RadminLAN.png" />
         <Resource Include="Assets\Images\Steam.png" />
         <Resource Include="Assets\Maps\MP_Alps.jpg" />

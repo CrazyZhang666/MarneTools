@@ -11,60 +11,65 @@
     mc:Ignorable="d">
 
     <Border
-        Height="90"
+        Height="50"
         Margin="5,0,5,5"
-        d:Background="AliceBlue"
         BorderBrush="Gray"
-        BorderThickness="1"
-        CornerRadius="5">
+        BorderThickness="1">
         <Grid>
-            <DockPanel TextElement.FontWeight="Bold">
+            <DockPanel>
                 <Image
-                    Height="76"
-                    Margin="7,0,10,0"
-                    d:Width="140"
+                    Margin="0,0,10,0"
+                    d:Width="80"
                     DockPanel.Dock="Left"
                     Source="{Binding ServerModel.MapImage}" />
-                <TextBlock
-                    Margin="0,0,10,0"
-                    VerticalAlignment="Center"
-                    d:Text="0 / 64"
+                <StackPanel
+                    Margin="10,0,20,0"
                     DockPanel.Dock="Right"
-                    FontSize="16">
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat="{}{0} / {1}">
-                            <Binding Path="ServerModel.Player" />
-                            <Binding Path="ServerModel.MaxPlayer" />
-                        </MultiBinding>
-                    </TextBlock.Text>
-                </TextBlock>
-                <StackPanel VerticalAlignment="Center">
-                    <TextBlock d:Text="服务器名称 - 地区 - 国家" FontSize="18">
-                        <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} - {1} - {2}">
-                                <Binding Path="ServerModel.Name" />
-                                <Binding Path="ServerModel.Region" />
-                                <Binding Path="ServerModel.Country" />
-                            </MultiBinding>
-                        </TextBlock.Text>
-                    </TextBlock>
+                    Orientation="Horizontal">
                     <TextBlock
-                        Margin="0,3,0,3"
-                        d:Text="地图 - 模式 - 刷新率"
+                        VerticalAlignment="Center"
+                        d:Text="0 / 64"
                         FontSize="14">
                         <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} - {1} - {2}HZ">
-                                <Binding Path="ServerModel.MapName" />
-                                <Binding Path="ServerModel.GameMode" />
-                                <Binding Path="ServerModel.TickRate" />
+                            <MultiBinding StringFormat="{}{0} / {1} [0]">
+                                <Binding Path="ServerModel.Player" />
+                                <Binding Path="ServerModel.MaxPlayer" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
+                    <Image
+                        Height="12"
+                        Margin="20,0,5,0"
+                        Source="/Assets/Images/Ping.png" />
                     <TextBlock
-                        d:Text="mod名称"
+                        Width="25"
+                        VerticalAlignment="Center"
+                        d:Text="99"
                         FontSize="14"
+                        Text="{Binding ServerModel.Delay}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock
+                        Margin="0,0,0,2"
+                        d:Text="服务器名称 - 地区 - 国家"
+                        FontSize="18"
                         FontWeight="Bold"
-                        Text="{Binding ServerModel.ModName}" />
+                        Text="{Binding ServerModel.Name}" />
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Assets/Images/CN.png" />
+                        <TextBlock
+                            Margin="8,0,0,0"
+                            VerticalAlignment="Center"
+                            d:Text="地图 - 模式 - MOD - 刷新率">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} - {1} - MOD - {2}HZ">
+                                    <Binding Path="ServerModel.MapName" />
+                                    <Binding Path="ServerModel.GameMode" />
+                                    <Binding Path="ServerModel.TickRate" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </DockPanel>
         </Grid>

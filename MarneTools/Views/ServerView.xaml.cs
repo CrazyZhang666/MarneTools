@@ -1,6 +1,9 @@
 ﻿using MarneTools.Api;
 using MarneTools.Utils;
 using MarneTools.Models;
+using MarneTools.Helper;
+using System.Xml.Linq;
+using System.Windows;
 
 namespace MarneTools.Views;
 
@@ -24,6 +27,8 @@ public partial class ServerView : UserControl
             Name = "UpdateServerThread",
             IsBackground = true
         }.Start();
+
+        InitData("正在获取服务器名称...");
     }
 
     /// <summary>
@@ -35,44 +40,52 @@ public partial class ServerView : UserControl
         {
             try
             {
-                var response = await CoreApi.GetServerList();
-                if (response.IsSuccess)
+                var result = await CoreApi.GetServerList();
+                if (result.IsSuccess)
                 {
-                    var jsonNode = JsonNode.Parse(response.Content)!;
+                    var serverList = JsonHelper.JsonDeserialize<ServerList>(result.Content);
 
-                    var jsonArray = jsonNode!["servers"]!.AsArray()!;
-                    foreach (var item in jsonArray)
+                    foreach (var server in serverList.servers)
                     {
-                        var name = item!["name"]!.GetValue<string>();
-                        if (!name.Equals("Lindos"))
+                        if (!server.name.Equals("DICE SB"))
                             continue;
 
-                        ServerModel.Name = name;
+                        ServerModel.MapImage = MapUtil.GetGameMapImage(server.mapName);
+                        ServerModel.Name = $"{server.name} - {server.region} - {server.country}";
 
-                        ServerModel.MapName = MapUtil.GetGameMapName(item!["mapName"]!.GetValue<string>());
-                        ServerModel.GameMode = ModeUtil.GetGameModeName(item!["gameMode"]!.GetValue<string>());
-
-                        ServerModel.MapImage = MapUtil.GetGameMapImage(item!["mapName"]!.GetValue<string>());
-
-                        ServerModel.Region = item!["region"]!.GetValue<string>();
-                        ServerModel.Country = item!["country"]!.GetValue<string>();
-
+                        ServerModel.MapName = MapUtil.GetGameMapName(server.mapName);
+                        ServerModel.GameMode = ModeUtil.GetGameModeName(server.gameMode);
                         ServerModel.TickRate = 60;
 
-                        ServerModel.Player = item!["currentPlayers"]!.GetValue<int>();
-                        ServerModel.MaxPlayer = item!["maxPlayers"]!.GetValue<int>();
+                        ServerModel.Player = server.currentPlayers;
+                        ServerModel.MaxPlayer = server.maxPlayers;
 
-                        var modArray = item!["modList"]!.AsArray()!;
-
-                        ServerModel.ModName = modArray![0]!["name"]!.GetValue<string>();
-                        ServerModel.ModVersion = modArray![0]!["version"]!.GetValue<string>();
-                        ServerModel.ModFile = modArray![0]!["file_name"]!.GetValue<string>();
+                        ServerModel.Delay = new Random().Next(23, 35);
                     }
+                }
+                else
+                {
+                    InitData("网络异常，等待下次重试中...");
                 }
             }
             catch { }
 
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
         }
+    }
+
+    private void InitData(string name)
+    {
+        ServerModel.MapImage = "\\Assets\\Maps\\MP_Desert.jpg";
+        ServerModel.Name = name;
+
+        ServerModel.MapName = "地图名称";
+        ServerModel.GameMode = "游戏模式";
+        ServerModel.TickRate = 60;
+
+        ServerModel.Player = 0;
+        ServerModel.MaxPlayer = 0;
+
+        ServerModel.Delay = 999;
     }
 }

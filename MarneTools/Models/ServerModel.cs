@@ -15,12 +15,6 @@ public partial class ServerModel : ObservableObject
     private string mapImage;
 
     [ObservableProperty]
-    private string region;
-
-    [ObservableProperty]
-    private string country;
-
-    [ObservableProperty]
     private int tickRate;
 
     [ObservableProperty]
@@ -30,11 +24,5 @@ public partial class ServerModel : ObservableObject
     private int maxPlayer;
 
     [ObservableProperty]
-    private string modName;
-
-    [ObservableProperty]
-    private string modVersion;
-
-    [ObservableProperty]
-    private string modFile;
+    private int delay;
 }
