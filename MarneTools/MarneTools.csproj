@@ -80,8 +80,8 @@
         <None Update="AppData\FrostyMod\Frosty\manager_config.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="AppData\FrostyMod\Mods\bf1\mod_name_version.fbmod">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <None Update="AppData\FrostyMod\Mods\bf1\SinaiCavalryBattle-v0.10.0.0.fbmod">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\Profiles\BF1SDK.dll">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
