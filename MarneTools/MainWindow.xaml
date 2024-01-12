@@ -24,14 +24,15 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
             <!--  顶部状态栏  -->
             <views:StatetView />
             <!--  主要功能区  -->
             <views:LaunchView Grid.Row="1" />
-            <!--  宣传海报区域  -->
-            <views:PosterView Grid.Row="2" />
+            <!--  服务器信息区域  -->
+            <views:ServerView Grid.Row="2" />
         </Grid>
         <!--  通知区域  -->
         <ntf:NotificationArea

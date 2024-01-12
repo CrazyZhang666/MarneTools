@@ -1,10 +1,10 @@
-﻿using MarneTools.Data;
+﻿using MarneTools.Api;
+using MarneTools.Data;
 using MarneTools.Utils;
 using MarneTools.Helper;
 using MarneTools.Models;
 
 using Downloader;
-using MarneTools.Api;
 
 namespace MarneTools;
 
@@ -14,7 +14,7 @@ namespace MarneTools;
 public partial class LoadWindow : Window
 {
     /// <summary>
-    /// 主窗口数据模型
+    /// 数据模型
     /// </summary>
     public LoadModel LoadModel { get; set; } = new();
 
@@ -34,6 +34,7 @@ public partial class LoadWindow : Window
 
         LoadModel.ReceiveSize = 0;
         LoadModel.TotalSize = 100;
+        LoadModel.DownloadState = "0KB / 0MB";
     }
 
     private void Window_Closing(object sender, CancelEventArgs e)
@@ -71,11 +72,11 @@ public partial class LoadWindow : Window
             AppendLogger("✔️ 获取服务器配置信息成功");
 
             // 开始解析服务器配置文件
-            var jsonNode = JsonNode.Parse(response.Content);
+            var jsonNode = JsonNode.Parse(response.Content)!;
             AppendLogger("✔️ 解析服务器配置信息成功");
 
             // 获取服务器版本号
-            var webVersion = Version.Parse(jsonNode["Version"]?.GetValue<string>());
+            var webVersion = Version.Parse(jsonNode!["Version"]!.GetValue<string>());
 
             AppendLogger($"🔔 客户端版本号：{CoreUtil.ClientVersion}");
             AppendLogger($"🔔 服务器版本号：{webVersion}");
@@ -86,7 +87,7 @@ public partial class LoadWindow : Window
                 AppendLogger($"📢 发现新版本，请下载最新版本");
 
                 // 工具箱更新下载网盘地址
-                var webUpdate = jsonNode["Update"]?.GetValue<string>();
+                var webUpdate = jsonNode!["Update"]!.GetValue<string>();
 
                 this.Dispatcher.Invoke(() =>
                 {
@@ -107,24 +108,24 @@ public partial class LoadWindow : Window
             /////////////////////////////////////////////////////
 
             // 是否为局域网服务器
-            CoreUtil.IsLanServer = jsonNode["LanServer"]?.GetValue<bool>() ?? default;
+            CoreUtil.IsLanServer = jsonNode!["LanServer"]!.GetValue<bool>();
             // 海报图片链接
-            CoreUtil.PosterUrl = jsonNode["Poster"]?.GetValue<string>();
+            CoreUtil.PosterUrl = jsonNode!["Poster"]!.GetValue<string>();
 
             // Marne.dll更新下载地址、MD5
-            var webMarneDll = jsonNode["MarneDll"]?.GetValue<string>();
-            var webMarneDllMD5 = jsonNode["MarneDllMD5"]?.GetValue<string>();
+            var webMarneDll = jsonNode!["MarneDll"]!.GetValue<string>();
+            var webMarneDllMD5 = jsonNode!["MarneDllMD5"]!.GetValue<string>();
 
             // MarneLauncher.exe更新下载地址、MD5
-            var webMarneExe = jsonNode["MarneExe"]?.GetValue<string>();
-            var webMarneExeMD5 = jsonNode["MarneExeMD5"]?.GetValue<string>();
+            var webMarneExe = jsonNode!["MarneExe"]!.GetValue<string>();
+            var webMarneExeMD5 = jsonNode!["MarneExeMD5"]!.GetValue<string>();
 
             // Mod中文名称
-            var webModName = jsonNode["ModName"]?.GetValue<string>();
+            var webModName = jsonNode!["ModName"]!.GetValue<string>();
 
             // Mod文件更新下载地址、MD5
-            var webModFile = jsonNode["ModFile"]?.GetValue<string>();
-            var webModFileMD5 = jsonNode["ModFileMD5"]?.GetValue<string>();
+            var webModFile = jsonNode!["ModFile"]!.GetValue<string>();
+            var webModFileMD5 = jsonNode!["ModFileMD5"]!.GetValue<string>();
 
             /////////////////////////////////////////////////////
 

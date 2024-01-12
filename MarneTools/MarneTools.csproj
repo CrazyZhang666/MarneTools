@@ -30,6 +30,41 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Assets\Maps\MP_Alps.jpg" />
+      <None Remove="Assets\Maps\MP_Amiens.jpg" />
+      <None Remove="Assets\Maps\MP_Beachhead.jpg" />
+      <None Remove="Assets\Maps\MP_Blitz.jpg" />
+      <None Remove="Assets\Maps\MP_Bridge.jpg" />
+      <None Remove="Assets\Maps\MP_Chateau.jpg" />
+      <None Remove="Assets\Maps\MP_Desert.jpg" />
+      <None Remove="Assets\Maps\MP_FaoFortress.jpg" />
+      <None Remove="Assets\Maps\MP_Fields.jpg" />
+      <None Remove="Assets\Maps\MP_Forest.jpg" />
+      <None Remove="Assets\Maps\MP_Giant.jpg" />
+      <None Remove="Assets\Maps\MP_Graveyard.jpg" />
+      <None Remove="Assets\Maps\MP_Harbor.jpg" />
+      <None Remove="Assets\Maps\MP_Hell.jpg" />
+      <None Remove="Assets\Maps\MP_Islands.jpg" />
+      <None Remove="Assets\Maps\MP_ItalianCoast.jpg" />
+      <None Remove="Assets\Maps\MP_London.jpg" />
+      <None Remove="Assets\Maps\MP_MountainFort.jpg" />
+      <None Remove="Assets\Maps\MP_Naval.jpg" />
+      <None Remove="Assets\Maps\MP_Offensive.jpg" />
+      <None Remove="Assets\Maps\MP_Ravines.jpg" />
+      <None Remove="Assets\Maps\MP_Ridge.jpg" />
+      <None Remove="Assets\Maps\MP_River.jpg" />
+      <None Remove="Assets\Maps\MP_Scar.jpg" />
+      <None Remove="Assets\Maps\MP_Shoveltown.jpg" />
+      <None Remove="Assets\Maps\MP_Suez.jpg" />
+      <None Remove="Assets\Maps\MP_Trench.jpg" />
+      <None Remove="Assets\Maps\MP_Tsaritsyn.jpg" />
+      <None Remove="Assets\Maps\MP_Underworld.jpg" />
+      <None Remove="Assets\Maps\MP_Valley.jpg" />
+      <None Remove="Assets\Maps\MP_Verdun.jpg" />
+      <None Remove="Assets\Maps\MP_Volga.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <PackageReference Include="Downloader" Version="3.0.6" />
         <PackageReference Include="Notification.Wpf" Version="8.0.0" />
@@ -45,6 +80,38 @@
         <Resource Include="Assets\Images\Origin.png" />
         <Resource Include="Assets\Images\RadminLAN.png" />
         <Resource Include="Assets\Images\Steam.png" />
+        <Resource Include="Assets\Maps\MP_Alps.jpg" />
+        <Resource Include="Assets\Maps\MP_Amiens.jpg" />
+        <Resource Include="Assets\Maps\MP_Beachhead.jpg" />
+        <Resource Include="Assets\Maps\MP_Blitz.jpg" />
+        <Resource Include="Assets\Maps\MP_Bridge.jpg" />
+        <Resource Include="Assets\Maps\MP_Chateau.jpg" />
+        <Resource Include="Assets\Maps\MP_Desert.jpg" />
+        <Resource Include="Assets\Maps\MP_FaoFortress.jpg" />
+        <Resource Include="Assets\Maps\MP_Fields.jpg" />
+        <Resource Include="Assets\Maps\MP_Forest.jpg" />
+        <Resource Include="Assets\Maps\MP_Giant.jpg" />
+        <Resource Include="Assets\Maps\MP_Graveyard.jpg" />
+        <Resource Include="Assets\Maps\MP_Harbor.jpg" />
+        <Resource Include="Assets\Maps\MP_Hell.jpg" />
+        <Resource Include="Assets\Maps\MP_Islands.jpg" />
+        <Resource Include="Assets\Maps\MP_ItalianCoast.jpg" />
+        <Resource Include="Assets\Maps\MP_London.jpg" />
+        <Resource Include="Assets\Maps\MP_MountainFort.jpg" />
+        <Resource Include="Assets\Maps\MP_Naval.jpg" />
+        <Resource Include="Assets\Maps\MP_Offensive.jpg" />
+        <Resource Include="Assets\Maps\MP_Ravines.jpg" />
+        <Resource Include="Assets\Maps\MP_Ridge.jpg" />
+        <Resource Include="Assets\Maps\MP_River.jpg" />
+        <Resource Include="Assets\Maps\MP_Scar.jpg" />
+        <Resource Include="Assets\Maps\MP_Shoveltown.jpg" />
+        <Resource Include="Assets\Maps\MP_Suez.jpg" />
+        <Resource Include="Assets\Maps\MP_Trench.jpg" />
+        <Resource Include="Assets\Maps\MP_Tsaritsyn.jpg" />
+        <Resource Include="Assets\Maps\MP_Underworld.jpg" />
+        <Resource Include="Assets\Maps\MP_Valley.jpg" />
+        <Resource Include="Assets\Maps\MP_Verdun.jpg" />
+        <Resource Include="Assets\Maps\MP_Volga.jpg" />
     </ItemGroup>
 
     <ItemGroup>

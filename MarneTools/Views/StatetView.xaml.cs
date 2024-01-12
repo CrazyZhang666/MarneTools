@@ -1,7 +1,6 @@
 ﻿using MarneTools.Utils;
 using MarneTools.Models;
 using MarneTools.Helper;
-using System.Windows.Navigation;
 
 namespace MarneTools.Views;
 
@@ -11,7 +10,7 @@ namespace MarneTools.Views;
 public partial class StatetView : UserControl
 {
     /// <summary>
-    /// 主窗口数据模型
+    /// 数据模型
     /// </summary>
     public StateModel StateModel { get; set; } = new();
 

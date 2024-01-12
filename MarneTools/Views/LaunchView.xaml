@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
     xmlns:utils="clr-namespace:MarneTools.Utils"
-    d:DesignHeight="200"
+    d:DesignHeight="150"
     d:DesignWidth="800"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
