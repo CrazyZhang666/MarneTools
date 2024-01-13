@@ -1,5 +1,6 @@
 ﻿using MarneTools.Api;
 using MarneTools.Models;
+using MarneTools.Utils;
 
 namespace MarneTools.Views;
 
@@ -20,28 +21,32 @@ public partial class NoticeView : UserControl
         NoticeModel.ActivityTxt = "加载中...";
         NoticeModel.NoticeTxt = "加载中...";
 
-        Task.Run(async () =>
+        // 更新服务器通知消息线程
+        new Thread(UpdateNoticeThread)
         {
-            var response = await CoreApi.GetWebActivity();
-            if (!response.IsSuccess)
-            {
-                NoticeModel.ActivityTxt = "加载活动信息失败";
-                return;
-            }
+            Name = "UpdateNoticeThread",
+            IsBackground = true
+        }.Start();
+    }
 
-            NoticeModel.ActivityTxt = response.Content;
-        });
-
-        Task.Run(async () =>
+    /// <summary>
+    /// 更新服务器通知消息线程
+    /// </summary>
+    private async void UpdateNoticeThread()
+    {
+        while (CoreUtil.IsAppRunning)
         {
-            var response = await CoreApi.GetWebNotice();
-            if (!response.IsSuccess)
+            try 
             {
-                NoticeModel.NoticeTxt = "加载通知信息失败";
-                return;
-            }
+                var responseAct = await CoreApi.GetWebActivity();
+                NoticeModel.ActivityTxt = responseAct.IsSuccess ? responseAct.Content : "加载活动信息失败";
 
-            NoticeModel.NoticeTxt = response.Content;
-        });
+                var responseNot = await CoreApi.GetWebNotice();
+                NoticeModel.NoticeTxt = responseNot.IsSuccess ? responseNot.Content : "加载通知信息失败";
+
+            } catch { }
+
+            Thread.Sleep(10000);
+        }
     }
 }
