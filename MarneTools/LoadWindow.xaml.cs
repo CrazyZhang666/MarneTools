@@ -107,10 +107,8 @@ public partial class LoadWindow : Window
 
             /////////////////////////////////////////////////////
 
-            // 是否为局域网服务器
-            CoreUtil.IsLanServer = jsonNode!["LanServer"]!.GetValue<bool>();
-            // 海报图片链接
-            CoreUtil.PosterUrl = jsonNode!["Poster"]!.GetValue<string>();
+            // 服务器名称
+            CoreUtil.ServerName = jsonNode!["ServerName"]!.GetValue<string>();
 
             // Marne.dll更新下载地址、MD5
             var webMarneDll = jsonNode!["MarneDll"]!.GetValue<string>();

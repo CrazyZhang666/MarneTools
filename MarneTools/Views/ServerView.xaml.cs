@@ -43,7 +43,7 @@ public partial class ServerView : UserControl
                 {
                     var serverList = JsonHelper.JsonDeserialize<ServerList>(result.Content);
 
-                    var server = serverList.servers.Find(x => x.name.Equals("DICE SB"));
+                    var server = serverList.servers.Find(x => x.name.Equals(CoreUtil.ServerName));
                     if (server is not null)
                     {
                         ServerModel.MapImage = MapUtil.GetGameMapImage(server.mapName);
