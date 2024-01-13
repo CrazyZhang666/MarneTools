@@ -1,9 +1,5 @@
-服务器提供者为 msk大佬，江苏镇江三线BGP线路，国内延迟在20~30ms左右
+服务器提供者为 msk 大佬，江苏镇江三线BGP线路，国内延迟在20~30ms左右
 
-直接进服即可
-直接进服即可
-直接进服即可
-
-不需要开启RadminLAN
-不需要开启RadminLAN
-不需要开启RadminLAN
+直接Mod启动后进服即可，不需要开启RadminLAN
+直接Mod启动后进服即可，不需要开启RadminLAN
+直接Mod启动后进服即可，不需要开启RadminLAN
