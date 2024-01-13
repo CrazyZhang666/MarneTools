@@ -2,8 +2,6 @@
 using MarneTools.Utils;
 using MarneTools.Models;
 using MarneTools.Helper;
-using System.Xml.Linq;
-using System.Windows;
 
 namespace MarneTools.Views;
 
@@ -45,11 +43,9 @@ public partial class ServerView : UserControl
                 {
                     var serverList = JsonHelper.JsonDeserialize<ServerList>(result.Content);
 
-                    foreach (var server in serverList.servers)
+                    var server = serverList.servers.Find(x => x.name.Equals("DICE SB"));
+                    if (server is not null)
                     {
-                        if (!server.name.Equals("DICE SB"))
-                            continue;
-
                         ServerModel.MapImage = MapUtil.GetGameMapImage(server.mapName);
                         ServerModel.Name = $"{server.name} - {server.region} - {server.country}";
 
@@ -60,7 +56,12 @@ public partial class ServerView : UserControl
                         ServerModel.Player = server.currentPlayers;
                         ServerModel.MaxPlayer = server.maxPlayers;
 
-                        ServerModel.Delay = new Random().Next(23, 35);
+                        ServerModel.Ping = new Random().Next(23, 35);
+                        ServerModel.PingImage = "\\Assets\\Images\\PingBest.png";
+                    }
+                    else
+                    {
+                        InitData("服务器未开启，请等待...");
                     }
                 }
                 else
@@ -76,16 +77,17 @@ public partial class ServerView : UserControl
 
     private void InitData(string name)
     {
-        ServerModel.MapImage = "\\Assets\\Maps\\MP_Desert.jpg";
+        ServerModel.MapImage = "\\Assets\\Images\\MP_Null.png";
         ServerModel.Name = name;
 
-        ServerModel.MapName = "地图名称";
-        ServerModel.GameMode = "游戏模式";
-        ServerModel.TickRate = 60;
+        ServerModel.MapName = "未知地图名称";
+        ServerModel.GameMode = "未知游戏模式";
+        ServerModel.TickRate = 0;
 
         ServerModel.Player = 0;
         ServerModel.MaxPlayer = 0;
 
-        ServerModel.Delay = 999;
+        ServerModel.Ping = 999;
+        ServerModel.PingImage = "\\Assets\\Images\\PingUnknown.png";
     }
 }

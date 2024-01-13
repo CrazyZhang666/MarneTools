@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://wpf.microsoft.com/ui/2023/xaml"
-    d:DesignHeight="120"
+    d:DesignHeight="60"
     d:DesignWidth="800"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
@@ -21,7 +21,7 @@
                     Margin="0,0,10,0"
                     d:Width="80"
                     DockPanel.Dock="Left"
-                    Source="{Binding ServerModel.MapImage}" />
+                    Source="{Binding ServerModel.MapImage, Converter={StaticResource StringToImageSourceConverter}}" />
                 <StackPanel
                     Margin="10,0,10,0"
                     DockPanel.Dock="Right"
@@ -40,13 +40,14 @@
                     <Image
                         Height="12"
                         Margin="20,0,5,0"
-                        Source="/MarneTools;component/Assets/Images/Ping.png" />
+                        d:Source="/MarneTools;component/Assets/Images/PingUnknown.png"
+                        Source="{Binding ServerModel.PingImage, Converter={StaticResource StringToImageSourceConverter}}" />
                     <TextBlock
                         Width="25"
                         VerticalAlignment="Center"
-                        d:Text="99"
+                        d:Text="999"
                         FontSize="14"
-                        Text="{Binding ServerModel.Delay}" />
+                        Text="{Binding ServerModel.Ping}" />
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock

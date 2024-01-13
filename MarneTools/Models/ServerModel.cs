@@ -24,5 +24,8 @@ public partial class ServerModel : ObservableObject
     private int maxPlayer;
 
     [ObservableProperty]
-    private int delay;
+    private int ping;
+
+    [ObservableProperty]
+    private string pingImage;
 }

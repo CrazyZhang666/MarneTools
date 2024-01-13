@@ -1,8 +1,14 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cnv="clr-namespace:MarneTools.UI.Converters">
 
     <SolidColorBrush x:Key="Blue" Color="#409EFF" />
     <SolidColorBrush x:Key="Red" Color="#F56C6C" />
     <SolidColorBrush x:Key="Orange" Color="#E6A23C" />
+
+    <cnv:IsNullOrWhiteSpaceConverter x:Key="IsNullOrWhiteSpaceConverter" />
+    <cnv:StringToImageSourceConverter x:Key="StringToImageSourceConverter" />
 
     <!--  超链接全局样式  -->
     <Style TargetType="{x:Type Hyperlink}">

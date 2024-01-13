@@ -30,43 +30,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Assets\Images\CN.png" />
-      <None Remove="Assets\Images\Ping.png" />
-      <None Remove="Assets\Maps\MP_Alps.jpg" />
-      <None Remove="Assets\Maps\MP_Amiens.jpg" />
-      <None Remove="Assets\Maps\MP_Beachhead.jpg" />
-      <None Remove="Assets\Maps\MP_Blitz.jpg" />
-      <None Remove="Assets\Maps\MP_Bridge.jpg" />
-      <None Remove="Assets\Maps\MP_Chateau.jpg" />
-      <None Remove="Assets\Maps\MP_Desert.jpg" />
-      <None Remove="Assets\Maps\MP_FaoFortress.jpg" />
-      <None Remove="Assets\Maps\MP_Fields.jpg" />
-      <None Remove="Assets\Maps\MP_Forest.jpg" />
-      <None Remove="Assets\Maps\MP_Giant.jpg" />
-      <None Remove="Assets\Maps\MP_Graveyard.jpg" />
-      <None Remove="Assets\Maps\MP_Harbor.jpg" />
-      <None Remove="Assets\Maps\MP_Hell.jpg" />
-      <None Remove="Assets\Maps\MP_Islands.jpg" />
-      <None Remove="Assets\Maps\MP_ItalianCoast.jpg" />
-      <None Remove="Assets\Maps\MP_London.jpg" />
-      <None Remove="Assets\Maps\MP_MountainFort.jpg" />
-      <None Remove="Assets\Maps\MP_Naval.jpg" />
-      <None Remove="Assets\Maps\MP_Offensive.jpg" />
-      <None Remove="Assets\Maps\MP_Ravines.jpg" />
-      <None Remove="Assets\Maps\MP_Ridge.jpg" />
-      <None Remove="Assets\Maps\MP_River.jpg" />
-      <None Remove="Assets\Maps\MP_Scar.jpg" />
-      <None Remove="Assets\Maps\MP_Shoveltown.jpg" />
-      <None Remove="Assets\Maps\MP_Suez.jpg" />
-      <None Remove="Assets\Maps\MP_Trench.jpg" />
-      <None Remove="Assets\Maps\MP_Tsaritsyn.jpg" />
-      <None Remove="Assets\Maps\MP_Underworld.jpg" />
-      <None Remove="Assets\Maps\MP_Valley.jpg" />
-      <None Remove="Assets\Maps\MP_Verdun.jpg" />
-      <None Remove="Assets\Maps\MP_Volga.jpg" />
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <PackageReference Include="Downloader" Version="3.0.6" />
         <PackageReference Include="Notification.Wpf" Version="8.0.0" />
@@ -80,8 +43,10 @@
         <Resource Include="Assets\Images\EaApp.png" />
         <Resource Include="Assets\Images\FrostyModManager.png" />
         <Resource Include="Assets\Images\MarneLauncher.png" />
+        <Resource Include="Assets\Images\MP_Null.png" />
         <Resource Include="Assets\Images\Origin.png" />
-        <Resource Include="Assets\Images\Ping.png" />
+        <Resource Include="Assets\Images\PingBest.png" />
+        <Resource Include="Assets\Images\PingUnknown.png" />
         <Resource Include="Assets\Images\RadminLAN.png" />
         <Resource Include="Assets\Images\Steam.png" />
         <Resource Include="Assets\Maps\MP_Alps.jpg" />
@@ -123,7 +88,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MarneTools.UI\MarneTools.UI.csproj" />
+        <ProjectReference Include="..\MarneTools.UI\MarneTools.UI.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -152,7 +117,7 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\Mods\bf1\SinaiCavalryBattle-v0.10.0.0.fbmod">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\Profiles\BF1SDK.dll">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -203,7 +168,7 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="更新日志.txt">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
