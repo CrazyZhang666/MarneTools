@@ -57,6 +57,24 @@ public static class CoreApi
     }
 
     /// <summary>
+    /// 获取网络活动文件
+    /// </summary>
+    /// <returns></returns>
+    public static async Task<RespContent> GetWebActivity()
+    {
+        return await GetAsync("/files/activity.txt");
+    }
+
+    /// <summary>
+    /// 获取网络通知文件
+    /// </summary>
+    /// <returns></returns>
+    public static async Task<RespContent> GetWebNotice()
+    {
+        return await GetAsync("/files/notice.txt");
+    }
+
+    /// <summary>
     /// 获取服务器列表
     /// </summary>
     /// <returns></returns>

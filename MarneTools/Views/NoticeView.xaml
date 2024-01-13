@@ -12,12 +12,14 @@
     <UniformGrid Columns="2">
         <TextBox
             Margin="5,0,2.5,5"
+            d:Text="加载中..."
             Style="{StaticResource TextBoxStyle_Logger}"
-            Text="加载中..." />
+            Text="{Binding NoticeModel.ActivityTxt}" />
         <TextBox
             Margin="2.5,0,5,5"
+            d:Text="加载中..."
             Style="{StaticResource TextBoxStyle_Logger}"
-            Text="加载中..." />
+            Text="{Binding NoticeModel.NoticeTxt}" />
     </UniformGrid>
 
 </UserControl>
