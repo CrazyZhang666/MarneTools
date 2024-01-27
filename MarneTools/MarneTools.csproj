@@ -96,28 +96,28 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\FrostyControls.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\FrostyCore.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\FrostyHash.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\FrostyModManager.exe">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\FrostyModSupport.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\FrostySdk.dll">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\Frosty\manager_config.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="AppData\FrostyMod\Mods\bf1\SinaiCavalryBattle-v0.10.0.0.fbmod">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <None Update="AppData\FrostyMod\Mods\bf1\32v32-TankWar-v0.2.0.0.fbmod">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\Profiles\BF1SDK.dll">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
