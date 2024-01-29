@@ -23,12 +23,6 @@
         <None Update="Marne\MarneLauncher.exe">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Marne\MarneSA.dll">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="Marne\MarneSA.exe">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
         <None Update="Mods\32v32-TankWar-v0.3.0.0.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>

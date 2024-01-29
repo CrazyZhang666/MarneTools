@@ -16,7 +16,7 @@
     "ApplyModOrder": "List",
     "UseDefaultProfile": false,
     "DeleteCollectionMods": true,
-    "UpdateCheck": true,
+    "UpdateCheck": false,
     "UpdateCheckPrerelease": false,
     "MaxCasFileSize": "1GB"
   }
