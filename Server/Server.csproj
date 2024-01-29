@@ -29,7 +29,7 @@
         <None Update="Marne\MarneSA.exe">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Mods\32v32-TankWar-v0.2.0.0.fbmod">
+        <None Update="Mods\32v32-TankWar-v0.3.0.0.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>

@@ -1,4 +1,4 @@
-服务器提供者为 Misaka_Mikoto_01 大佬，江苏镇江三线BGP线路，国内延迟在20~30ms左右
+服务器提供者为 CrazyZhang 内网穿透，
 
 直接Mod启动后进服即可，不需要开启RadminLAN
 直接Mod启动后进服即可，不需要开启RadminLAN
