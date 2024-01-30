@@ -55,7 +55,7 @@ public partial class LaunchView : UserControl
     [RelayCommand]
     private void RunBattlefieldChat()
     {
-        ProcessHelper.OpenProcess(CoreUtil.File_BattlefieldChat);
+        ProcessHelper.OpenProcess(CoreUtil.File_BattlefieldChat, true);
     }
     #endregion
 

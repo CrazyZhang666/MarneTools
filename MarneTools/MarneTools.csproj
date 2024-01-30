@@ -9,7 +9,6 @@
         <Platforms>x64</Platforms>
         <StartupObject>MarneTools.App</StartupObject>
         <ApplicationIcon>Assets\Icons\Favicon.ico</ApplicationIcon>
-        <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -117,7 +116,7 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\Mods\bf1\AllWeapon-NoKitLimit-32v32-TDM-v0.1.0.0.fbmod">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\Profiles\BF1SDK.dll">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>

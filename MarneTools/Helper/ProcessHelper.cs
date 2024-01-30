@@ -59,8 +59,9 @@ public static class ProcessHelper
     /// 打开指定进程，可以附带运行参数
     /// </summary>
     /// <param name="filePath">可执行文件路径</param>
+    /// <param name="isRunas">是否请求管理员</param>
     /// <param name="args">可选参数</param>
-    public static void OpenProcess(string filePath, string args = "")
+    public static void OpenProcess(string filePath, bool isRunas = false, string args = "")
     {
         // 判断程序是否存在
         if (!File.Exists(filePath))
@@ -85,9 +86,12 @@ public static class ProcessHelper
             var processInfo = new ProcessStartInfo
             {
                 FileName = fileInfo.FullName,
-                UseShellExecute = false,
-                WorkingDirectory = fileInfo.DirectoryName
+                UseShellExecute = true,
+                WorkingDirectory = fileInfo.DirectoryName,
             };
+
+            if (isRunas)
+                processInfo.Verb = "runas";
 
             if (!string.IsNullOrWhiteSpace(args))
                 processInfo.Arguments = args;

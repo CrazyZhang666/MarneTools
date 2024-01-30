@@ -4,9 +4,9 @@
   "ServerName": "[MOD] BF1-Marne-Mod",
   "ModName": "无兵种武器限制+全武器和技能 32v32团队死斗",
   "MarneDll": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/Marne.dll",
-  "MarneDllMD5": "7B8193E2CD815CCE8C3C91DF9BCCAC1D",
+  "MarneDllMD5": "525392AC24D71F6A4E31D057A9D4750B",
   "MarneExe": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/MarneLauncher.exe",
-  "MarneExeMD5": "DAA67731A7570D00A812269C5A34C5BA",
+  "MarneExeMD5": "672783613977DBE365CBF83DAE98E474",
   "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/AllWeapon-NoKitLimit-32v32-TDM-v0.1.0.0.fbmod",
   "ModFileMD5": "74ECE469055915F2DE0474A76F4366A3"
 }
