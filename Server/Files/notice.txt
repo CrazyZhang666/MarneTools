@@ -1,5 +1,5 @@
-服务器提供者为 CrazyZhang 内网穿透，
+服务器提供者为 CrazyZhang 内网穿透，服务器位于国内，无需加速器
 
-直接Mod启动后进服即可，不需要开启RadminLAN
-直接Mod启动后进服即可，不需要开启RadminLAN
-直接Mod启动后进服即可，不需要开启RadminLAN
+直接Mod启动后裸连进服即可，不需要开启RadminLAN
+直接Mod启动后裸连进服即可，不需要开启RadminLAN
+直接Mod启动后裸连进服即可，不需要开启RadminLAN

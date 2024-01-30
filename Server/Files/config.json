@@ -2,11 +2,11 @@
   "Version": "1.4.0.0",
   "Update": "https://www.123pan.com/s/QEorVv-qb6v3.html",
   "ServerName": "[MOD] BF1-Marne-Mod",
-  "ModName": "战争雷霆 32v32坦克大战",
+  "ModName": "无兵种武器限制+全武器和技能 32v32团队死斗",
   "MarneDll": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/Marne.dll",
   "MarneDllMD5": "7B8193E2CD815CCE8C3C91DF9BCCAC1D",
   "MarneExe": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/MarneLauncher.exe",
   "MarneExeMD5": "DAA67731A7570D00A812269C5A34C5BA",
-  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/32v32-TankWar-v0.3.0.0.fbmod",
-  "ModFileMD5": "26D228540368BA1807FD2D501F9A6CFB"
+  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/AllWeapon-NoKitLimit-32v32-TDM-v0.1.0.0.fbmod",
+  "ModFileMD5": "74ECE469055915F2DE0474A76F4366A3"
 }
