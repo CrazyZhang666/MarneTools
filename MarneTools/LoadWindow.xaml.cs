@@ -1,10 +1,9 @@
-﻿using MarneTools.Api;
+﻿using Downloader;
+using MarneTools.Api;
 using MarneTools.Data;
-using MarneTools.Utils;
 using MarneTools.Helper;
 using MarneTools.Models;
-
-using Downloader;
+using MarneTools.Utils;
 
 namespace MarneTools;
 
@@ -117,9 +116,6 @@ public partial class LoadWindow : Window
             // MarneLauncher.exe更新下载地址、MD5
             var webMarneExe = jsonNode!["MarneExe"]!.GetValue<string>();
             var webMarneExeMD5 = jsonNode!["MarneExeMD5"]!.GetValue<string>();
-
-            // Mod中文名称
-            var webModName = jsonNode!["ModName"]!.GetValue<string>();
 
             // Mod文件更新下载地址、MD5
             var webModFile = jsonNode!["ModFile"]!.GetValue<string>();
@@ -295,20 +291,24 @@ public partial class LoadWindow : Window
                 AppendLogger("⚠️ Mod文件被占用，跳过检查更新");
             }
 
+            AppendLogger($"🔔 Mod文件名称：{modName}");
+
             /////////////////////////////////////////////////////
 
-            // 关闭FrostyModManager程序
-            ProcessHelper.CloseProcessNoHit(CoreUtil.Name_FrostyModManager);
-            AppendLogger("✔️ 关闭FrostyModManager程序成功");
+            var currentDir = Directory.GetCurrentDirectory();
+            if (CoreUtil.CheckHasChinese(currentDir))
+            {
+                AppendLogger("❌ 当前运行路径含有中文，请在英文目录下运行，初始化终止");
+                return;
+            }
 
-            AppendLogger($"🔔 Mod中文名称：{webModName}");
-            AppendLogger($"🔔 Mod文件名称：{modName}");
+            /////////////////////////////////////////////////////
 
             // 通过注册表获取战地1安装目录
             using var bf1Reg = Registry.LocalMachine.OpenSubKey("SOFTWARE\\EA Games\\Battlefield 1");
             if (bf1Reg is null)
             {
-                AppendLogger("❌ 获取战地1注册表失败，初始化终止");
+                AppendLogger("❌ 获取战地1注册表失败，请尝试右键管理员运行，初始化终止");
                 return;
             }
             AppendLogger("✔️ 获取战地1注册表成功");
@@ -316,7 +316,7 @@ public partial class LoadWindow : Window
             var installDir = bf1Reg.GetValue("Install Dir") as string;
             if (!Directory.Exists(installDir))
             {
-                AppendLogger("❌ 获取战地1注册表安装目录失败，初始化终止");
+                AppendLogger("❌ 获取战地1注册表安装目录失败，请尝试右键管理员运行，初始化终止");
                 return;
             }
             AppendLogger("✔️ 获取战地1注册表安装目录成功");
@@ -326,6 +326,13 @@ public partial class LoadWindow : Window
 
             /////////////////////////////////////////////////////
 
+            var systeamDisk = Environment.GetEnvironmentVariable("systemdrive");
+            if (CoreUtil.BF1InstallDir.StartsWith(systeamDisk))
+            {
+                AppendLogger("❌ 检测到战地1安装在系统盘，请尝试右键管理员运行，初始化终止");
+                return;
+            }
+
             var dinput8Path = Path.Combine(CoreUtil.BF1InstallDir, "dinput8.dll");
             if (File.Exists(dinput8Path))
             {
@@ -334,6 +341,10 @@ public partial class LoadWindow : Window
             }
 
             /////////////////////////////////////////////////////
+
+            // 关闭FrostyModManager程序
+            ProcessHelper.CloseProcessNoHit(CoreUtil.Name_FrostyModManager);
+            AppendLogger("✔️ 关闭FrostyModManager程序成功");
 
             // 创建FrostyMod配置文件
             var modConfig = new ModConfig();

@@ -1,6 +1,6 @@
-﻿using Notification.Wpf.Constants;
+﻿using Notification.Wpf;
+using Notification.Wpf.Constants;
 using Notification.Wpf.Controls;
-using Notification.Wpf;
 
 namespace MarneTools.Helper;
 

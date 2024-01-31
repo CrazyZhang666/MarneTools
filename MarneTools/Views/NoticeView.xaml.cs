@@ -36,7 +36,7 @@ public partial class NoticeView : UserControl
     {
         while (CoreUtil.IsAppRunning)
         {
-            try 
+            try
             {
                 var responseAct = await CoreApi.GetWebActivity();
                 NoticeModel.ActivityTxt = responseAct.IsSuccess ? responseAct.Content : "加载活动信息失败";
@@ -44,7 +44,8 @@ public partial class NoticeView : UserControl
                 var responseNot = await CoreApi.GetWebNotice();
                 NoticeModel.NoticeTxt = responseNot.IsSuccess ? responseNot.Content : "加载通知信息失败";
 
-            } catch { }
+            }
+            catch { }
 
             Thread.Sleep(10000);
         }

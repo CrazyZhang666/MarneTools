@@ -1,7 +1,12 @@
 ﻿namespace MarneTools.Utils;
 
-public static class CoreUtil
+public static partial class CoreUtil
 {
+    [GeneratedRegex(@"[\u4e00-\u9fa5]")]
+    private static partial Regex ChineseRegex();
+
+    ///////////////////////////////////////////////
+
     public static bool IsAppRunning { get; set; } = true;
     public static Version ClientVersion { get; private set; }
 
@@ -69,5 +74,15 @@ public static class CoreUtil
 
         File_RadminLAN = Path.Combine(Dir_AppData, "__Installer\\Radmin_LAN_1.4.4642.1.exe");
         File_BattlefieldChat = Path.Combine(Dir_AppData, "Tools\\BattlefieldChat.exe");
+    }
+
+    /// <summary>
+    /// 检测字符串路径中是否含有中文
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
+    public static bool CheckHasChinese(string path)
+    {
+        return ChineseRegex().IsMatch(path);
     }
 }

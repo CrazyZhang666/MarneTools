@@ -78,6 +78,11 @@
                     <WrapPanel HorizontalAlignment="Right">
                         <ui:IconButton
                             Margin="5,5,0,0"
+                            Background="{StaticResource Red}"
+                            Command="{Binding ClearModDataCommand}"
+                            Content="清理Mod数据" />
+                        <ui:IconButton
+                            Margin="5,5,0,0"
                             Background="{StaticResource Blue}"
                             Command="{Binding RunFrostyModManagerCommand}"
                             Content="启动"
