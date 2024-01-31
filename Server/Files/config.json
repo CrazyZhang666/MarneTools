@@ -2,11 +2,11 @@
   "Version": "1.5.0.0",
   "Update": "https://www.123pan.com/s/QEorVv-qb6v3.html",
   "ServerName": "[MOD] BF1-Marne-Mod",
-  "ModName": "32v32 迫击炮装甲车大战",
+  "ModName": "32v32 机炮轻坦大战",
   "MarneDll": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/Marne.dll",
   "MarneDllMD5": "525392AC24D71F6A4E31D057A9D4750B",
   "MarneExe": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/MarneLauncher.exe",
   "MarneExeMD5": "16C8F51CDAF8761C01C0366DC41214E6",
-  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/MortarTankWar-32v32-v0.1.0.0.fbmod",
-  "ModFileMD5": "C9D5FE8A587AF158A3A372B237630D70"
+  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/FT17-32v32-TankWar-v0.2.0.0.fbmod",
+  "ModFileMD5": "0F8D5C2373ADBA24C474F01C1EE118D3"
 }
