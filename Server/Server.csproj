@@ -23,7 +23,7 @@
         <None Update="Marne\MarneLauncher.exe">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Mods\AllWeapon-NoKitLimit-32v32-TDM-v0.1.0.0.fbmod">
+        <None Update="Mods\32v32-TankWar-v0.3.0.0.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
