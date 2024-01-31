@@ -3,3 +3,8 @@
 直接Mod启动后裸连进服即可，不需要开启RadminLAN
 直接Mod启动后裸连进服即可，不需要开启RadminLAN
 直接Mod启动后裸连进服即可，不需要开启RadminLAN
+
+注意事项：
+----------
+ - Frosty Mod Manager启动战地1后会自动关闭，这个是正常现象
+ - 战地1游戏目录必须纯净，免Origin补丁无法使用Mod
