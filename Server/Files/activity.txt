@@ -8,4 +8,4 @@
 - 流血宴厅
 - 西奈沙漠
 
-Mod文件名称：FT17-32v32-TankWar-v0.2.0.0.fbmod
+Mod文件名称：FT17-32v32-TankWar-v0.3.0.0.fbmod
