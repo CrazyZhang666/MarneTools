@@ -23,7 +23,7 @@
         <None Update="Marne\MarneLauncher.exe">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Mods\FT17-32v32-TankWar-v0.4.0.0.fbmod">
+        <None Update="Mods\FT17-20mm-32v32-TankWar-v0.5.0.0.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>

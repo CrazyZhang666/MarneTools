@@ -24,10 +24,10 @@ public class Program
         Console.WriteLine(BitConverter.ToString(marneExeMd5).Replace("-", ""));
         Console.WriteLine();
 
-        using var fbmodFs = File.OpenRead(".\\Mods\\FT17-32v32-TankWar-v0.4.0.0.fbmod");
+        using var fbmodFs = File.OpenRead(".\\Mods\\FT17-20mm-32v32-TankWar-v0.5.0.0.fbmod");
         var fbmodMd5 = md5.ComputeHash(fbmodFs);
 
-        Console.WriteLine("FT17-32v32-TankWar-v0.4.0.0.fbmod");
+        Console.WriteLine("FT17-20mm-32v32-TankWar-v0.5.0.0.fbmod");
         Console.WriteLine(BitConverter.ToString(fbmodMd5).Replace("-", ""));
         Console.WriteLine();
 
