@@ -329,8 +329,11 @@ public partial class LoadWindow : Window
             var systeamDisk = Environment.GetEnvironmentVariable("systemdrive");
             if (CoreUtil.BF1InstallDir.StartsWith(systeamDisk))
             {
-                AppendLogger("❌ 检测到战地1安装在系统盘，请尝试右键管理员运行，初始化终止");
-                return;
+                if (!CoreUtil.IsRunAsAdmin())
+                {
+                    AppendLogger("❌ 检测到战地1安装在系统盘，请尝试右键管理员运行，初始化终止");
+                    return;
+                }
             }
 
             var dinput8Path = Path.Combine(CoreUtil.BF1InstallDir, "dinput8.dll");

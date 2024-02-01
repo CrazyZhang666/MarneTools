@@ -1,4 +1,6 @@
-﻿namespace MarneTools.Utils;
+﻿using System.Security.Principal;
+
+namespace MarneTools.Utils;
 
 public static partial class CoreUtil
 {
@@ -84,5 +86,14 @@ public static partial class CoreUtil
     public static bool CheckHasChinese(string path)
     {
         return ChineseRegex().IsMatch(path);
+    }
+
+    /// 判断程序是否是以管理员身份运行。
+    /// </summary>
+    public static bool IsRunAsAdmin()
+    {
+        var id = WindowsIdentity.GetCurrent();
+        var principal = new WindowsPrincipal(id);
+        return principal.IsInRole(WindowsBuiltInRole.Administrator);
     }
 }
