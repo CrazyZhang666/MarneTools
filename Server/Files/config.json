@@ -2,11 +2,11 @@
   "Version": "1.5.2.0",
   "Update": "https://www.123pan.com/s/QEorVv-qb6v3.html",
   "ServerName": "[MOD] BF1-Marne-Mod",
-  "ModName": "32v32 机炮轻坦大战",
+  "ModName": "32v32 黑尔戈兰湾 驱逐舰海战",
   "MarneDll": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/Marne.dll",
-  "MarneDllMD5": "525392AC24D71F6A4E31D057A9D4750B",
+  "MarneDllMD5": "AD8DE348EE2E187AC5450DBA5BBE021C",
   "MarneExe": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/MarneLauncher.exe",
-  "MarneExeMD5": "16C8F51CDAF8761C01C0366DC41214E6",
-  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/FT17-20mm-32v32-TankWar-v0.5.0.0.fbmod",
-  "ModFileMD5": "F56774CFB961484E5B91124824F7AC45"
+  "MarneExeMD5": "268B27C0846B1C458F298E8E7F2DFE6B",
+  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/HeligolandBight-32v32-Destroyer-v0.1.0.0.fbmod",
+  "ModFileMD5": "3FE33EF6CD901C519EDBA763515CD385"
 }

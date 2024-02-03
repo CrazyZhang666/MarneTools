@@ -115,7 +115,7 @@
         <None Update="AppData\FrostyMod\Frosty\manager_config.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="AppData\FrostyMod\Mods\bf1\FT17-20mm-32v32-TankWar-v0.5.0.0.fbmod">
+        <None Update="AppData\FrostyMod\Mods\bf1\HeligolandBight-32v32-Destroyer-v0.1.0.0.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\ThirdParty\CryptBase.dll">
