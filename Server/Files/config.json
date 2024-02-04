@@ -2,11 +2,11 @@
   "Version": "1.5.2.0",
   "Update": "https://www.123pan.com/s/QEorVv-qb6v3.html",
   "ServerName": "DICE SB",
-  "ModName": "32v32 黑尔戈兰湾 驱逐舰海战",
+  "ModName": "32v32 全兵种 全武器 全精英兵 大乱斗",
   "MarneDll": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/Marne.dll",
   "MarneDllMD5": "AD8DE348EE2E187AC5450DBA5BBE021C",
   "MarneExe": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/MarneLauncher.exe",
-  "MarneExeMD5": "268B27C0846B1C458F298E8E7F2DFE6B",
-  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/HeligolandBight-32v32-Destroyer-v0.1.0.0.fbmod",
-  "ModFileMD5": "3FE33EF6CD901C519EDBA763515CD385"
+  "MarneExeMD5": "36A40F167922098BF307D433A2587406",
+  "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/AllKit-AllHero-32v32-v2.0.2.4.fbmod",
+  "ModFileMD5": "E2DCE73F5539BFE6F8974D3E5584C016"
 }

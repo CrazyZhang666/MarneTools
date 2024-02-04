@@ -23,7 +23,7 @@
         <None Update="Marne\MarneLauncher.exe">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="Mods\HeligolandBight-32v32-Destroyer-v0.1.0.0.fbmod">
+        <None Update="Mods\AllKit-AllHero-32v32-v2.0.2.4.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
