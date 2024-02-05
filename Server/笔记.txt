@@ -10,3 +10,7 @@ RadminLAN 虚拟机局域网联机
 服务器提供者为 msk大佬，江苏镇江三线BGP线路，国内延迟在20~30ms左右
 
 服务器提供者为 CrazyZhang 内网穿透，服务器位于国内，无需加速器
+
+[MOD] BF1-Marne-Mod
+
+DICE SB
