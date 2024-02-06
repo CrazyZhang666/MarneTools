@@ -24,10 +24,10 @@ public class Program
         Console.WriteLine(BitConverter.ToString(marneExeMd5).Replace("-", ""));
         Console.WriteLine();
 
-        using var fbmodFs = File.OpenRead(".\\Mods\\AllKit-AllHero-32v32-v2.0.2.4.fbmod");
+        using var fbmodFs = File.OpenRead(".\\Mods\\AllKitAndHero-2024NewYear-32v32-v3.0.0.0.fbmod");
         var fbmodMd5 = md5.ComputeHash(fbmodFs);
 
-        Console.WriteLine("AllKit-AllHero-32v32-v2.0.2.4.fbmod");
+        Console.WriteLine("AllKitAndHero-2024NewYear-32v32-v3.0.0.0.fbmod");
         Console.WriteLine(BitConverter.ToString(fbmodMd5).Replace("-", ""));
         Console.WriteLine();
 
