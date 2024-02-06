@@ -1,11 +1,7 @@
 服务器提供者为 msk大佬，江苏镇江三线BGP线路，国内延迟在20~30ms左右
 
-直接Mod启动后裸连进服即可，不需要开启RadminLAN
-直接Mod启动后裸连进服即可，不需要开启RadminLAN
-直接Mod启动后裸连进服即可，不需要开启RadminLAN
-
 注意事项：
 ----------
  - 马恩工具箱路径不能有中文及特殊字符，建议全英文路径
- - Frosty Mod Manager启动战地1后会自动关闭，这个是正常现象
+ - Frosty Mod Manager启动战地1后会自动关闭
  - 战地1游戏目录必须纯净，免Origin补丁无法使用Mod
