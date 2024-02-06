@@ -11,6 +11,7 @@ global using System.Net;
 global using System.Reflection;
 global using System.Runtime.InteropServices;
 global using System.Security.Cryptography;
+global using System.Security.Principal;
 global using System.Text.Encodings.Web;
 global using System.Text.Json;
 global using System.Text.Json.Nodes;

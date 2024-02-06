@@ -2,11 +2,6 @@
   "Version": "1.5.2.0",
   "Update": "https://www.123pan.com/s/QEorVv-qb6v3.html",
   "ServerName": "DICE SB",
-  "ModName": "32v32 全兵种、全武器、全技能、全精英兵大乱斗",
-  "MarneDll": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/Marne.dll",
-  "MarneDllMD5": "AD8DE348EE2E187AC5450DBA5BBE021C",
-  "MarneExe": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Marne/MarneLauncher.exe",
-  "MarneExeMD5": "F78B007BB2AD4B96E7E0C20BAC263F69",
   "ModFile": "https://ghproxy.net/https://raw.githubusercontent.com/CrazyZhang666/MarneTools/main/Server/Mods/AllKitAndHero-2024NewYear-32v32-v3.0.0.0.fbmod",
   "ModFileMD5": "3D1D6418B28D57B220EE9F74A59BE373"
 }

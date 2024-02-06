@@ -1,6 +1,4 @@
-﻿using System.Security.Principal;
-
-namespace MarneTools.Utils;
+﻿namespace MarneTools.Utils;
 
 public static partial class CoreUtil
 {

@@ -109,14 +109,6 @@ public partial class LoadWindow : Window
             // 服务器名称
             CoreUtil.ServerName = jsonNode!["ServerName"]!.GetValue<string>();
 
-            // Marne.dll更新下载地址、MD5
-            var webMarneDll = jsonNode!["MarneDll"]!.GetValue<string>();
-            var webMarneDllMD5 = jsonNode!["MarneDllMD5"]!.GetValue<string>();
-
-            // MarneLauncher.exe更新下载地址、MD5
-            var webMarneExe = jsonNode!["MarneExe"]!.GetValue<string>();
-            var webMarneExeMD5 = jsonNode!["MarneExeMD5"]!.GetValue<string>();
-
             // Mod文件更新下载地址、MD5
             var webModFile = jsonNode!["ModFile"]!.GetValue<string>();
             var webModFileMD5 = jsonNode!["ModFileMD5"]!.GetValue<string>();
@@ -131,106 +123,6 @@ public partial class LoadWindow : Window
                 ClearPackageOnCompletionWithFailure = true,
                 ReserveStorageSpaceBeforeStartingDownload = true
             };
-
-            // 判断Marne.dll文件是否被占用
-            if (!FileHelper.IsOccupied(CoreUtil.File_Marne_MarneDll))
-            {
-                // 开始检查Marne.dll是否需要更新
-                var marneDllMD5 = FileHelper.GetFileMD5(CoreUtil.File_Marne_MarneDll);
-                if (!webMarneDllMD5.Equals(marneDllMD5))
-                {
-                    // 开始下载最新版本Marne.dll
-                    AppendLogger($"📢 发现新版本Marne.dll文件，正在下载最新版本");
-
-                    var downloader = DownloadBuilder.New()
-                        .WithUrl(webMarneDll)
-                        .WithFileLocation(CoreUtil.File_Marne_MarneDll)
-                        .WithConfiguration(downloadOpt)
-                        .Build();
-
-                    downloader.DownloadStarted += (sender, e) =>
-                    {
-                        LoadModel.ReceiveSize = 0;
-                        LoadModel.TotalSize = e.TotalBytesToReceive;
-                        LoadModel.DownloadState = "0KB / 0MB";
-
-                        LoadModel.ProgressValue = 0;
-
-                        AppendLogger($"🔔 Marne.dll文件大小：{MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}");
-                    };
-                    downloader.DownloadProgressChanged += (sender, e) =>
-                    {
-                        LoadModel.ReceiveSize = e.ReceivedBytesSize;
-                        LoadModel.DownloadState = $"{MiscUtil.GetFileForamtSize(e.ReceivedBytesSize)} / {MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}";
-
-                        LoadModel.ProgressValue = LoadModel.ReceiveSize / LoadModel.TotalSize;
-                    };
-                    downloader.DownloadFileCompleted += (sender, e) =>
-                    {
-                        AppendLogger("✔️ Marne.dll文件下载完成");
-                    };
-
-                    await downloader.StartAsync();
-                }
-                else
-                {
-                    AppendLogger("🔔 恭喜，你的Marne.dll文件是最新版本");
-                }
-            }
-            else
-            {
-                AppendLogger("⚠️ Marne.dll文件被占用，跳过检查更新");
-            }
-
-            // 判断MarneLauncher.exe文件是否被占用
-            if (!FileHelper.IsOccupied(CoreUtil.File_Marne_MarneLauncher))
-            {
-                // 开始检查MarneLauncher.exe是否需要更新
-                var marneExeMD5 = FileHelper.GetFileMD5(CoreUtil.File_Marne_MarneLauncher);
-                if (!webMarneExeMD5.Equals(marneExeMD5))
-                {
-                    // 开始下载最新版本arneLauncher.exe
-                    AppendLogger($"📢 发现新版本MarneLauncher.exe文件，正在下载最新版本");
-
-                    var downloader = DownloadBuilder.New()
-                        .WithUrl(webMarneExe)
-                        .WithFileLocation(CoreUtil.File_Marne_MarneLauncher)
-                        .WithConfiguration(downloadOpt)
-                        .Build();
-
-                    downloader.DownloadStarted += (sender, e) =>
-                    {
-                        LoadModel.ReceiveSize = 0;
-                        LoadModel.TotalSize = e.TotalBytesToReceive;
-                        LoadModel.DownloadState = "0KB / 0MB";
-
-                        LoadModel.ProgressValue = 0;
-
-                        AppendLogger($"🔔 arneLauncher.exe文件大小：{MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}");
-                    };
-                    downloader.DownloadProgressChanged += (sender, e) =>
-                    {
-                        LoadModel.ReceiveSize = e.ReceivedBytesSize;
-                        LoadModel.DownloadState = $"{MiscUtil.GetFileForamtSize(e.ReceivedBytesSize)} / {MiscUtil.GetFileForamtSize(e.TotalBytesToReceive)}";
-
-                        LoadModel.ProgressValue = LoadModel.ReceiveSize / LoadModel.TotalSize;
-                    };
-                    downloader.DownloadFileCompleted += (sender, e) =>
-                    {
-                        AppendLogger("✔️ arneLauncher.exe文件下载完成");
-                    };
-
-                    await downloader.StartAsync();
-                }
-                else
-                {
-                    AppendLogger("🔔 恭喜，你的MarneLauncher.exe文件是最新版本");
-                }
-            }
-            else
-            {
-                AppendLogger("⚠️ MarneLauncher.exe文件被占用，跳过检查更新");
-            }
 
             // 获取Mod文件名称
             var modName = Path.GetFileName(webModFile);
