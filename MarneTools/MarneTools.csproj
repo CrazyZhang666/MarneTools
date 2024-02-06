@@ -46,7 +46,6 @@
         <Resource Include="Assets\Images\Origin.png" />
         <Resource Include="Assets\Images\PingBest.png" />
         <Resource Include="Assets\Images\PingUnknown.png" />
-        <Resource Include="Assets\Images\RadminLAN.png" />
         <Resource Include="Assets\Images\Steam.png" />
         <Resource Include="Assets\Maps\MP_Alps.jpg" />
         <Resource Include="Assets\Maps\MP_Amiens.jpg" />
@@ -137,9 +136,6 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\Tools\BattlefieldChat.exe">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="AppData\__Installer\Radmin_LAN_1.4.4642.1.exe">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="更新日志.txt">

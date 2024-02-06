@@ -37,17 +37,13 @@
         <!--  /////////////  -->
         <StackPanel Orientation="Horizontal">
             <ui:StateCard
-                Title="Radmin LAN"
-                IsRunning="{Binding StateModel.IsRadminRun}"
-                Source="/MarneTools;component/Assets/Images/RadminLAN.png" />
+                Title="Frosty Mod Manager"
+                IsRunning="{Binding StateModel.IsFrostyModRun}"
+                Source="/MarneTools;component/Assets/Images/FrostyModManager.png" />
             <ui:StateCard
                 Title="Marne Launcher"
                 IsRunning="{Binding StateModel.IsMarneRun}"
                 Source="/MarneTools;component/Assets/Images/MarneLauncher.png" />
-            <ui:StateCard
-                Title="Frosty Mod Manager"
-                IsRunning="{Binding StateModel.IsFrostyModRun}"
-                Source="/MarneTools;component/Assets/Images/FrostyModManager.png" />
             <ui:StateCard
                 Title="Origin"
                 IsRunning="{Binding StateModel.IsOriginRun}"

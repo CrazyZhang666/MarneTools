@@ -17,12 +17,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="Marne\Marne.dll">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
-        <None Update="Marne\MarneLauncher.exe">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </None>
         <None Update="Mods\AllKitAndHero-2024NewYear-32v32-v3.0.0.0.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>

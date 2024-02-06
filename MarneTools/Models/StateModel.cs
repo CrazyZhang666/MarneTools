@@ -3,13 +3,10 @@
 public partial class StateModel : ObservableObject
 {
     [ObservableProperty]
-    private bool isRadminRun;
+    private bool isFrostyModRun;
 
     [ObservableProperty]
     private bool isMarneRun;
-
-    [ObservableProperty]
-    private bool isFrostyModRun;
 
     [ObservableProperty]
     private bool isOriginRun;

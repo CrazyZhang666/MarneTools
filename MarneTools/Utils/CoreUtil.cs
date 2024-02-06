@@ -16,9 +16,6 @@ public static partial class CoreUtil
 
     public static string BF1InstallDir { get; set; }
 
-    public const string RadminInstallPath = "C:\\Program Files (x86)\\Radmin VPN\\RvRvpnGui.exe";
-
-    public const string Name_RadminLAN = "RvRvpnGui";
     public const string Name_FrostyModManager = "FrostyModManager";
     public const string Name_MarneLauncher = "MarneLauncher";
 
@@ -47,7 +44,6 @@ public static partial class CoreUtil
     public static string File_Marne_MarneDll { get; private set; }
     public static string File_Marne_MarneLauncher { get; private set; }
 
-    public static string File_RadminLAN { get; private set; }
     public static string File_BattlefieldChat { get; private set; }
 
     static CoreUtil()
@@ -72,7 +68,6 @@ public static partial class CoreUtil
         File_Marne_MarneDll = Path.Combine(Dir_Marne, "Marne.dll");
         File_Marne_MarneLauncher = Path.Combine(Dir_Marne, "MarneLauncher.exe");
 
-        File_RadminLAN = Path.Combine(Dir_AppData, "__Installer\\Radmin_LAN_1.4.4642.1.exe");
         File_BattlefieldChat = Path.Combine(Dir_AppData, "Tools\\BattlefieldChat.exe");
     }
 

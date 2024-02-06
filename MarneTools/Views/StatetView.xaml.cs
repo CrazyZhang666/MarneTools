@@ -37,7 +37,6 @@ public partial class StatetView : UserControl
         {
             var processList = Process.GetProcesses().ToList();
 
-            StateModel.IsRadminRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_RadminLAN, StringComparison.OrdinalIgnoreCase)) is not null;
             StateModel.IsMarneRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_MarneLauncher, StringComparison.OrdinalIgnoreCase)) is not null;
             StateModel.IsFrostyModRun = processList.Find(x => x.ProcessName.Equals(CoreUtil.Name_FrostyModManager, StringComparison.OrdinalIgnoreCase)) is not null;
 
