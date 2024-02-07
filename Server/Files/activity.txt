@@ -8,4 +8,4 @@
 - 阿尔贡森林
 - 攻占托尔
 
-Mod文件名称：AllKitWeaponHero-2024NewYear-32v32-v3.1.0.0.fbmod
+Mod文件名称：AllKitAndHero-2024NewYear-32v32-v3.0.0.0.fbmod
