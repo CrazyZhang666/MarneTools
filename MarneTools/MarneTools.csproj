@@ -114,7 +114,7 @@
         <None Update="AppData\FrostyMod\Frosty\manager_config.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
-        <None Update="AppData\FrostyMod\Mods\bf1\AllKitAndHero-2024NewYear-32v32-v3.0.0.0.fbmod">
+        <None Update="AppData\FrostyMod\Mods\bf1\AllKitWeaponHero-2024NewYear-32v32-v3.1.0.0.fbmod">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="AppData\FrostyMod\ThirdParty\CryptBase.dll">
