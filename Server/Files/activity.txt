@@ -1,4 +1,4 @@
-2024新年活动
+2024/02/14 新年活动
 32v32 全兵种、全武器、全技能、全精英兵大乱斗
 
 地图列表（抢攻）：
@@ -8,4 +8,4 @@
 - 阿尔贡森林
 - 攻占托尔
 
-Mod文件名称：AllKitWeaponHero-2024NewYear-32v32-v3.1.0.0.fbmod
+Mod文件名称：AllKitWeaponHero-2024NewYear-32v32-v3.2.0.0.fbmod
