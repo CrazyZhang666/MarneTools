@@ -17,7 +17,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Update="Mods\AllKitWeaponHero-AllMode-32v32-v3.3.0.0.fbmod">
+      <None Update="Mods\AllKitWeaponHero-AllMode-32v32-v3.4.0.0.fbmod">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
