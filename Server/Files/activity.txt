@@ -1,9 +1,9 @@
 2024/02/18 每晚活动
 --------------
 战地1载具优势，双方各16飞机和16坦克大战
-（全飞机全坦克，可以边修边开，优化维修速度）
+（32飞机32坦克，可以边修边开，优化维修速度）
 
 地图列表：
 - 西奈沙漠
 
-Mod文件名称：SinaiDesert-32PlaneAnd32Tank-VehicleWar-v1.0.0.0.fbmod
+Mod文件名称：SinaiDesert-32PlaneAnd32Tank-VehicleWar-v2.0.0.0.fbmod
