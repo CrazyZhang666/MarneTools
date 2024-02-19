@@ -228,7 +228,7 @@ public partial class LoadWindow : Window
                 }
             }
 
-            var dinput8Path = Path.Combine(CoreUtil.BF1InstallDir, "dinput8.dll");
+            var dinput8Path = Path.Combine(CoreUtil.BF1InstallDir, "originemu.dll");
             if (File.Exists(dinput8Path))
             {
                 AppendLogger("❌ 发现战地1目录有免Orign补丁，请删除后再重试，初始化终止");
