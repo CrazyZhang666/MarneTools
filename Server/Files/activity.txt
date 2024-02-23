@@ -1,4 +1,4 @@
-2024/02/23 每晚活动
+2024/02/24 每晚活动
 --------------
 全武器、全技能、全兵种、全精英兵大战
 
@@ -6,4 +6,4 @@
 --------------
 - 全地图死斗循环
 
-Mod文件名称：AllKitWeaponHero-AllMode-32v32-v3.4.0.0.fbmod
+Mod文件名称：AllKitWeaponHero-AllMode-32v32-v3.5.0.0.fbmod
