@@ -6,4 +6,4 @@
 --------------
 - 全地图死斗循环
 
-Mod文件名称：AllKitWeaponHero-AllMode-32v32-v3.6.0.0.fbmod
+Mod文件名称：AllKitWeaponHero-AllMode-32v32-v3.7.0.0.fbmod
