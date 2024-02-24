@@ -187,6 +187,12 @@ public partial class LoadWindow : Window
 
             /////////////////////////////////////////////////////
 
+            if (!File.Exists(saveModPath))
+            {
+                AppendLogger("❌ 目标Mod文件不存在，请重启程序，初始化终止");
+                return;
+            }
+
             var currentDir = Directory.GetCurrentDirectory();
             if (CoreUtil.CheckHasChinese(currentDir))
             {
@@ -217,6 +223,14 @@ public partial class LoadWindow : Window
             AppendLogger($"🔔 此电脑战地1安装目录：{CoreUtil.BF1InstallDir}");
 
             /////////////////////////////////////////////////////
+
+            var diskFlag = Path.GetPathRoot(CoreUtil.BF1InstallDir);
+            var driveInfo = new DriveInfo(diskFlag);
+            if (driveInfo.DriveFormat != "NTFS")
+            {
+                AppendLogger("❌ 检测到战地1所在磁盘格式不是NTFS，请转换磁盘格式，初始化终止");
+                return;
+            }
 
             var systeamDisk = Environment.GetEnvironmentVariable("systemdrive");
             if (CoreUtil.BF1InstallDir.StartsWith(systeamDisk))

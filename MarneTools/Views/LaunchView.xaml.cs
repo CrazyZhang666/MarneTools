@@ -32,7 +32,23 @@ public partial class LaunchView : UserControl
     {
         ProcessHelper.CloseProcess(CoreUtil.Name_FrostyModManager);
     }
+    #endregion
 
+    #region Marne Launcher
+    [RelayCommand]
+    private void RunMarneLauncher()
+    {
+        ProcessHelper.OpenProcess(CoreUtil.File_Marne_MarneLauncher);
+    }
+
+    [RelayCommand]
+    private void CloseMarneLauncher()
+    {
+        ProcessHelper.CloseProcess(CoreUtil.Name_MarneLauncher);
+    }
+    #endregion
+
+    #region Other
     [RelayCommand]
     private void ClearModData()
     {
@@ -65,25 +81,27 @@ public partial class LaunchView : UserControl
             NotifierHelper.ShowException(ex);
         }
     }
-    #endregion
-
-    #region Marne Launcher
-    [RelayCommand]
-    private void RunMarneLauncher()
-    {
-        ProcessHelper.OpenProcess(CoreUtil.File_Marne_MarneLauncher);
-    }
-
-    [RelayCommand]
-    private void CloseMarneLauncher()
-    {
-        ProcessHelper.CloseProcess(CoreUtil.Name_MarneLauncher);
-    }
 
     [RelayCommand]
     private void RunBattlefieldChat()
     {
         ProcessHelper.OpenProcess(CoreUtil.File_BattlefieldChat, true);
+    }
+
+    [RelayCommand]
+    private void OpenBF1Floder()
+    {
+        ProcessHelper.OpenDirectory(CoreUtil.BF1InstallDir);
+    }
+
+    [RelayCommand]
+    private void ForceKillBf1Process()
+    {
+        if (MessageBox.Show("你确定要强制结束战地1进程吗？",
+            "警告", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
+        {
+            ProcessHelper.CloseProcess(CoreUtil.Name_BF1);
+        }
     }
     #endregion
 }

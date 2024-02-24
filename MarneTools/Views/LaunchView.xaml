@@ -84,6 +84,16 @@
                         Background="{StaticResource Red}"
                         Command="{Binding ClearModDataCommand}"
                         Content="清理Mod数据" />
+                    <ui:IconButton
+                        Margin="0,0,5,5"
+                        Background="{StaticResource Blue}"
+                        Command="{Binding OpenBF1FloderCommand}"
+                        Content="打开战地1目录" />
+                    <ui:IconButton
+                        Margin="0,0,5,5"
+                        Background="{StaticResource Red}"
+                        Command="{Binding ForceKillBf1ProcessCommand}"
+                        Content="强制结束战地1进程" />
                 </WrapPanel>
             </Border>
         </UniformGrid>

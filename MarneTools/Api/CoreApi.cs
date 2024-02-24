@@ -4,14 +4,12 @@ namespace MarneTools.Api;
 
 public static class CoreApi
 {
-    private const string _host = "https://api.battlefield.vip";
-
     private static readonly RestClient restClient;
 
     static CoreApi()
     {
         // 不抛出相关错误
-        var options = new RestClientOptions(_host)
+        var options = new RestClientOptions()
         {
             MaxTimeout = 5000,
             ThrowOnAnyError = false,
@@ -32,7 +30,9 @@ public static class CoreApi
 
         try
         {
-            var request = new RestRequest(url);
+            var request = new RestRequest($"https://142.171.106.140{url}");
+            request.AddHeader("Host", "api.battlefield.vip");
+
             var response = await restClient.ExecuteGetAsync(request);
 
             respContent.IsSuccess = response.StatusCode == HttpStatusCode.OK;
