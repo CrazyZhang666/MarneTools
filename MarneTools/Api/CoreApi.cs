@@ -30,7 +30,7 @@ public static class CoreApi
 
         try
         {
-            var request = new RestRequest($"https://142.171.106.140{url}");
+            var request = new RestRequest($"https://45.12.53.1{url}");
             request.AddHeader("Host", "api.battlefield.vip");
 
             var response = await restClient.ExecuteGetAsync(request);
