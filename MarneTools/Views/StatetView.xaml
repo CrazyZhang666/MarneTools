@@ -10,57 +10,32 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <DockPanel Background="#F7F7F7">
-        <!--  /////////////  -->
-        <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Right">
-            <StackPanel
-                Margin="5,0,5,5"
-                HorizontalAlignment="Right"
-                Orientation="Horizontal">
-                <TextBlock Margin="5,0,0,0" Text="{Binding StateModel.Version, FallbackValue='v0.0.0.0'}" />
-            </StackPanel>
-            <StackPanel
-                Margin="5,0,5,5"
-                HorizontalAlignment="Right"
-                Orientation="Horizontal">
-                <TextBlock Margin="7,0,0,0">
-                    <Hyperlink NavigateUri="https://marne.io" RequestNavigate="Hyperlink_RequestNavigate">Marne</Hyperlink>
-                </TextBlock>
-                <TextBlock Margin="7,0,0,0">
-                    <Hyperlink NavigateUri="https://github.com/CrazyZhang666/MarneTools" RequestNavigate="Hyperlink_RequestNavigate">GitHub</Hyperlink>
-                </TextBlock>
-                <TextBlock Margin="7,0,0,0">
-                    <Hyperlink NavigateUri="https://battlefield.vip/" RequestNavigate="Hyperlink_RequestNavigate">工具箱官网</Hyperlink>
-                </TextBlock>
-            </StackPanel>
-        </StackPanel>
-        <!--  /////////////  -->
-        <StackPanel Orientation="Horizontal">
-            <ui:StateCard
-                Title="Frosty Mod Manager"
-                IsRunning="{Binding StateModel.IsFrostyModRun}"
-                Source="/MarneTools;component/Assets/Images/FrostyModManager.png" />
-            <ui:StateCard
-                Title="Marne Launcher"
-                IsRunning="{Binding StateModel.IsMarneRun}"
-                Source="/MarneTools;component/Assets/Images/MarneLauncher.png" />
-            <ui:StateCard
-                Title="Origin"
-                IsRunning="{Binding StateModel.IsOriginRun}"
-                Source="/MarneTools;component/Assets/Images/Origin.png" />
-            <ui:StateCard
-                Title="Steam"
-                IsRunning="{Binding StateModel.IsSteamRun}"
-                Source="/MarneTools;component/Assets/Images/Steam.png" />
-            <ui:StateCard
-                Title="EA App"
-                IsRunning="{Binding StateModel.IsEaAppRun}"
-                Source="/MarneTools;component/Assets/Images/EaApp.png" />
-            <ui:StateCard
-                Title="Battlefield 1"
-                IsRunning="{Binding StateModel.IsBF1Run}"
-                Source="/MarneTools;component/Assets/Images/BF1.png" />
-        </StackPanel>
-    </DockPanel>
+    <StackPanel Orientation="Horizontal">
+        <ui:StateCard
+            Title="Frosty Mod Manager"
+            IsRunning="{Binding StateModel.IsFrostyModRun}"
+            Source="/MarneTools;component/Assets/Images/FrostyModManager.png" />
+        <ui:StateCard
+            Title="Marne Launcher"
+            IsRunning="{Binding StateModel.IsMarneRun}"
+            Source="/MarneTools;component/Assets/Images/MarneLauncher.png" />
+        <ui:StateCard
+            Title="Origin"
+            IsRunning="{Binding StateModel.IsOriginRun}"
+            Source="/MarneTools;component/Assets/Images/Origin.png" />
+        <ui:StateCard
+            Title="Steam"
+            IsRunning="{Binding StateModel.IsSteamRun}"
+            Source="/MarneTools;component/Assets/Images/Steam.png" />
+        <ui:StateCard
+            Title="EA App"
+            IsRunning="{Binding StateModel.IsEaAppRun}"
+            Source="/MarneTools;component/Assets/Images/EaApp.png" />
+        <ui:StateCard
+            Title="Battlefield 1"
+            IsRunning="{Binding StateModel.IsBF1Run}"
+            Source="/MarneTools;component/Assets/Images/BF1.png" />
+    </StackPanel>
+
 
 </UserControl>

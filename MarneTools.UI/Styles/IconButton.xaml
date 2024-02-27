@@ -23,7 +23,7 @@
                         CornerRadius="5"
                         SnapsToDevicePixels="True">
                         <StackPanel
-                            HorizontalAlignment="Left"
+                            HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
                             <controls:IconFont

@@ -26,15 +26,21 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <!--  顶部状态栏  -->
-            <views:StatetView />
+            <DockPanel Background="#F7F7F7">
+                <views:NameView DockPanel.Dock="Right" />
+                <views:StatetView />
+            </DockPanel>
             <!--  主要功能区  -->
             <views:LaunchView Grid.Row="1" />
             <!--  服务器信息区域  -->
             <views:ServerView Grid.Row="2" />
             <!--  活动消息及注意事项区域  -->
             <views:NoticeView Grid.Row="3" />
+            <!--  底部信息栏  -->
+            <views:FooterView Grid.Row="4" />
         </Grid>
         <!--  通知区域  -->
         <ntf:NotificationArea

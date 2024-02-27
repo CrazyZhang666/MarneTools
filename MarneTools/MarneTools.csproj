@@ -29,6 +29,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Resources\dinput8.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\dinput8.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
         <PackageReference Include="Downloader" Version="3.0.6" />
         <PackageReference Include="Notification.Wpf" Version="8.0.0" />
