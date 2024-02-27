@@ -8,6 +8,7 @@
     <SolidColorBrush x:Key="Orange" Color="#E6A23C" />
 
     <cnv:IsNullOrWhiteSpaceConverter x:Key="IsNullOrWhiteSpaceConverter" />
+    <cnv:IsNullOrWhiteSpace2Converter x:Key="IsNullOrWhiteSpace2Converter" />
     <cnv:StringToImageSourceConverter x:Key="StringToImageSourceConverter" />
 
     <!--  超链接全局样式  -->

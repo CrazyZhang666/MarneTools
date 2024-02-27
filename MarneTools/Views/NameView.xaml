@@ -10,12 +10,14 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <StackPanel Width="150" VerticalAlignment="Bottom">
-        <TextBox Margin="5,5,5,0" Padding="7" />
+    <StackPanel Width="200" VerticalAlignment="Bottom">
+        <TextBox x:Name="TextBox_PlayerName" Text="{Binding NameModel.PlayerName}" />
         <ui:IconButton
+            Margin="5,0,5,5"
             Background="{StaticResource Blue}"
             Command="{Binding ChangePlayerNameCommand}"
-            Content="修改中文ID" />
+            Content="修改离线模式中文ID（简体）"
+            IsEnabled="{Binding ElementName=TextBox_PlayerName, Path=Text, Converter={StaticResource IsNullOrWhiteSpace2Converter}}" />
     </StackPanel>
 
 </UserControl>

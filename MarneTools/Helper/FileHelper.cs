@@ -83,4 +83,35 @@ public static class FileHelper
 
         return BitConverter.ToString(fileMD5).Replace("-", "");
     }
+
+    /// <summary>
+    /// 从资源文件中抽取资源文件
+    /// </summary>
+    /// <param name="resFileName">资源文件路径</param>
+    /// <param name="outputFile">输出文件</param>
+    public static void ExtractResFile(string resFileName, string outputFile)
+    {
+        BufferedStream inStream = null;
+        FileStream outStream = null;
+
+        try
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            inStream = new BufferedStream(assembly.GetManifestResourceStream(resFileName));
+            outStream = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
+
+            var buffer = new byte[1024];
+            int length;
+
+            while ((length = inStream.Read(buffer, 0, buffer.Length)) > 0)
+                outStream.Write(buffer, 0, length);
+
+            outStream.Flush();
+        }
+        finally
+        {
+            outStream?.Close();
+            inStream?.Close();
+        }
+    }
 }
