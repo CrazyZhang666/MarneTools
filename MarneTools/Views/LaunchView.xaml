@@ -20,10 +20,16 @@
         <UniformGrid Columns="3">
             <ui:ImageCard Title="Frosty Mod Manager" Source="/MarneTools;component/Assets/Images/FrostyModManager.png">
                 <ui:ImageCard.Description>
-                    用于启动战地1Mod工具，若要进入Mod服则必须使用此工具启动，否则Mod不会生效
+                    用于启动战地1Mod工具，若要进入Mod服则必须使用此工具启动，战地1Mod启动成功后会自动关闭
                 </ui:ImageCard.Description>
                 <ui:ImageCard.CardContent>
                     <WrapPanel HorizontalAlignment="Right">
+                        <CheckBox
+                            Margin="5,5,0,0"
+                            VerticalAlignment="Center"
+                            d:IsChecked="True"
+                            Content="离线模式"
+                            IsChecked="{Binding LaunchModel.IsOfflineRun}" />
                         <ui:IconButton
                             Margin="5,5,0,0"
                             Background="{StaticResource Blue}"
@@ -45,7 +51,7 @@
                 Margin="1,5,1,5"
                 Source="/MarneTools;component/Assets/Images/MarneLauncher.png">
                 <ui:ImageCard.Description>
-                    用于加入Marne专用服务器，与EA服务器无关，数据相互独立，离线模式也可使用
+                    用于加入Marne专用服务器，与DICE官方服务器无关，数据相互独立，离线模式也可使用，无任何风险
                 </ui:ImageCard.Description>
                 <ui:ImageCard.CardContent>
                     <WrapPanel HorizontalAlignment="Right">

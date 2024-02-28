@@ -11,7 +11,7 @@
     mc:Ignorable="d">
 
     <StackPanel Width="200" VerticalAlignment="Bottom">
-        <TextBox x:Name="TextBox_PlayerName" Text="{Binding NameModel.PlayerName}" />
+        <ui:TextBoxHint x:Name="TextBox_PlayerName" Text="{Binding NameModel.PlayerName}" />
         <ui:IconButton
             Margin="5,0,5,5"
             Background="{StaticResource Blue}"

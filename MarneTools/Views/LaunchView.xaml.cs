@@ -1,4 +1,5 @@
 ﻿using MarneTools.Helper;
+using MarneTools.Models;
 using MarneTools.Utils;
 
 namespace MarneTools.Views;
@@ -8,9 +9,16 @@ namespace MarneTools.Views;
 /// </summary>
 public partial class LaunchView : UserControl
 {
+    /// <summary>
+    /// 数据模型
+    /// </summary>
+    public LaunchModel LaunchModel { get; set; } = new();
+
     public LaunchView()
     {
         InitializeComponent();
+
+        LaunchModel.IsOfflineRun = true;
     }
 
     #region Frosty Mod Manager
@@ -24,7 +32,10 @@ public partial class LaunchView : UserControl
             return;
         }
 
-        ProcessHelper.OpenProcess(CoreUtil.File_FrostyMod_FrostyModManager);
+        if (LaunchModel.IsOfflineRun)
+            ProcessHelper.OpenProcess(CoreUtil.File_FrostyMod_FrostyModManager, false, "-launch null -Online.ServiceNameOverride battlefield-1-xone");
+        else
+            ProcessHelper.OpenProcess(CoreUtil.File_FrostyMod_FrostyModManager);
     }
 
     [RelayCommand]
