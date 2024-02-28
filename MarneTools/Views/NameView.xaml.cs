@@ -61,9 +61,9 @@ public partial class NameView : UserControl
         }
 
         var nameHexBytes = Encoding.UTF8.GetBytes(playerName);
-        if (nameHexBytes.Length > 16)
+        if (nameHexBytes.Length > 15)
         {
-            NotifierHelper.Show(NotifierType.Warning, "游戏ID字节数不能超过16字节，请重新修改");
+            NotifierHelper.Show(NotifierType.Warning, "游戏ID字节数不能超过15字节，请重新修改");
             return;
         }
 

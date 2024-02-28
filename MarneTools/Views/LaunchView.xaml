@@ -51,7 +51,7 @@
                 Margin="1,5,1,5"
                 Source="/MarneTools;component/Assets/Images/MarneLauncher.png">
                 <ui:ImageCard.Description>
-                    用于加入Marne专用服务器，与DICE官方服务器无关，数据相互独立，离线模式也可使用，无任何风险
+                    用于加入Marne专用服务器，与DICE官方服务器无关，数据相互独立，离线模式可用，无任何风险
                 </ui:ImageCard.Description>
                 <ui:ImageCard.CardContent>
                     <WrapPanel HorizontalAlignment="Right">
