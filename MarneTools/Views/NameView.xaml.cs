@@ -67,10 +67,8 @@ public partial class NameView : UserControl
             return;
         }
 
-        if (!File.Exists(File_dinput8Dll))
-        {
-            FileHelper.ExtractResFile("MarneTools.Resources.dinput8.dll", File_dinput8Dll);
-        }
+        // 无论 dinput8.dll 是否存在都替换
+        FileHelper.ExtractResFile("MarneTools.Resources.dinput8.dll", File_dinput8Dll);
 
         var stream = new FileStream(File_dinput8Dll, FileMode.Open, FileAccess.Write);
         var writer = new BinaryWriter(stream, Encoding.UTF8, false);
