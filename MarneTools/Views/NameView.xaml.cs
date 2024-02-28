@@ -19,6 +19,11 @@ public partial class NameView : UserControl
     /// </summary>
     private string File_PlayerName;
 
+    /// <summary>
+    /// UTF8编码无BOM
+    /// </summary>
+    private readonly UTF8Encoding UTF8EncodingNoBom = new(false);
+
     public NameView()
     {
         InitializeComponent();
@@ -29,7 +34,7 @@ public partial class NameView : UserControl
 
             if (File.Exists(File_PlayerName))
             {
-                NameModel.PlayerName = File.ReadAllText(File_PlayerName, Encoding.UTF8);
+                NameModel.PlayerName = File.ReadAllText(File_PlayerName, UTF8EncodingNoBom);
             }
         });
     }
@@ -60,7 +65,7 @@ public partial class NameView : UserControl
 
         try
         {
-            File.WriteAllText(File_PlayerName, playerName, Encoding.UTF8);
+            File.WriteAllText(File_PlayerName, playerName, UTF8EncodingNoBom);
 
             NotifierHelper.Show(NotifierType.Success, "修改中文游戏ID成功，请启动战地1在线模式生效");
         }
