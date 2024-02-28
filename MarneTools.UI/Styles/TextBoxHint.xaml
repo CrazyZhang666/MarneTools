@@ -19,8 +19,6 @@
         <Setter Property="BorderBrush" Value="Gray" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="Icon" Value="&#xE13D;" />
-        <Setter Property="Hint" Value="请输入离线中文ID" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:TextBoxHint}">

@@ -11,12 +11,16 @@
     mc:Ignorable="d">
 
     <StackPanel Width="200" VerticalAlignment="Bottom">
-        <ui:TextBoxHint x:Name="TextBox_PlayerName" Text="{Binding NameModel.PlayerName}" />
+        <ui:TextBoxHint
+            x:Name="TextBox_PlayerName"
+            Hint="请输入在线模式中文ID"
+            Icon="&#xE13D;"
+            Text="{Binding NameModel.PlayerName}" />
         <ui:IconButton
             Margin="5,0,5,5"
             Background="{StaticResource Blue}"
             Command="{Binding ChangePlayerNameCommand}"
-            Content="修改离线模式中文ID（简体）"
+            Content="修改在线模式中文ID（简体）"
             IsEnabled="{Binding ElementName=TextBox_PlayerName, Path=Text, Converter={StaticResource IsNullOrWhiteSpace2Converter}}" />
     </StackPanel>
 

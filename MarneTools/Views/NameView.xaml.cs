@@ -15,9 +15,9 @@ public partial class NameView : UserControl
     public NameModel NameModel { get; set; } = new();
 
     /// <summary>
-    /// dinput8.dll文件路径
+    /// playername.txt 文件路径
     /// </summary>
-    private string File_dinput8Dll;
+    private string File_PlayerName;
 
     public NameView()
     {
@@ -25,20 +25,11 @@ public partial class NameView : UserControl
 
         Task.Run(() =>
         {
-            File_dinput8Dll = Path.Combine(CoreUtil.BF1InstallDir, "dinput8.dll");
+            File_PlayerName = Path.Combine(CoreUtil.BF1InstallDir, "playername.txt");
 
-            if (File.Exists(File_dinput8Dll))
+            if (File.Exists(File_PlayerName))
             {
-                var stream = new FileStream(File_dinput8Dll, FileMode.Open);
-                var reader = new BinaryReader(stream, Encoding.UTF8, false);
-
-                reader.BaseStream.Position = 0x5BC8;
-                var bytes = reader.ReadBytes(16);
-
-                NameModel.PlayerName = Encoding.UTF8.GetString(bytes);
-
-                reader.Close();
-                stream.Close();
+                NameModel.PlayerName = File.ReadAllText(File_PlayerName, Encoding.UTF8);
             }
         });
     }
@@ -52,7 +43,7 @@ public partial class NameView : UserControl
             return;
         }
 
-        var playerName = NameModel.PlayerName.Trim().Replace("\0", "");
+        var playerName = NameModel.PlayerName.Trim();
 
         if (string.IsNullOrWhiteSpace(playerName))
         {
@@ -67,27 +58,15 @@ public partial class NameView : UserControl
             return;
         }
 
-        // 无论 dinput8.dll 是否存在都替换
-        FileHelper.ExtractResFile("MarneTools.Resources.dinput8.dll", File_dinput8Dll);
-
-        var stream = new FileStream(File_dinput8Dll, FileMode.Open, FileAccess.Write);
-        var writer = new BinaryWriter(stream, Encoding.UTF8, false);
-
-        writer.BaseStream.Position = 0x5BC8;
-        for (int i = 0; i < 16; i++)
+        try
         {
-            if (nameHexBytes.Length > i)
-            {
-                writer.Write(nameHexBytes[i]);
-                continue;
-            }
+            File.WriteAllText(File_PlayerName, playerName, Encoding.UTF8);
 
-            writer.Write(new byte[] { 0x00 });
+            NotifierHelper.Show(NotifierType.Success, "修改中文游戏ID成功，请启动战地1在线模式生效");
         }
-
-        writer.Close();
-        stream.Close();
-
-        NotifierHelper.Show(NotifierType.Success, "修改中文游戏ID成功，请离线启动战地1生效");
+        catch (Exception ex)
+        {
+            NotifierHelper.ShowException(ex);
+        }
     }
 }
