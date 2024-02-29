@@ -1,4 +1,4 @@
-2024/02/29 每晚活动
+2024/03/01 每晚活动
 --------------
 全武器、全技能、全兵种、全精英兵大战
 
@@ -13,4 +13,4 @@
 - 攻占托尔
 - 亚眠
 
-Mod文件名称：AllKitWeaponHero-AllMode-32v32-v4.1.0.0.fbmod
+Mod文件名称：AllKitWeaponHero-AllMode-32v32-v4.2.0.0.fbmod
