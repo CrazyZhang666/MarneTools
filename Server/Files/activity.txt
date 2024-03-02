@@ -4,6 +4,7 @@
 
 地图列表：
 --------------
-- 法乌克斯要塞（团队死斗）
+- 阿奇巴巴（全新地图）
+- 法乌克斯要塞（全新地图）
 
-Mod文件名称：AllKitWeaponHero-AllMode-32v32-v4.4.0.0.fbmod
+Mod文件名称：AllKitWeaponHero-AllMode-32v32-v4.5.0.0.fbmod
