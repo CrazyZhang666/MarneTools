@@ -12,4 +12,4 @@
 - 亚眠
 - 更多...
 
-Mod文件名称：AllKitWeaponHero-AllMode-32v32-v4.8.0.0.fbmod
+Mod文件名称：AllKitWeaponHero-AllMode-32v32-v4.9.0.0.fbmod
