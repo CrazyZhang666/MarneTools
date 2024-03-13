@@ -15,6 +15,7 @@ public static partial class CoreUtil
     ///////////////////////////////////////////////
 
     public static string BF1InstallDir { get; set; }
+    public static string BF1ExecPath { get; set; }
 
     public const string Name_FrostyModManager = "FrostyModManager";
     public const string Name_MarneLauncher = "MarneLauncher";
@@ -88,5 +89,20 @@ public static partial class CoreUtil
         var id = WindowsIdentity.GetCurrent();
         var principal = new WindowsPrincipal(id);
         return principal.IsInRole(WindowsBuiltInRole.Administrator);
+    }
+
+    /// <summary>
+    /// 获取指定本机注册表数值数据
+    /// </summary>
+    /// <param name="regPath"></param>
+    /// <param name="valueName"></param>
+    /// <returns></returns>
+    public static string GetRegistryLocalMachineValueData(string regPath, string valueName)
+    {
+        using var bf1Reg = Registry.LocalMachine.OpenSubKey(regPath);
+        if (bf1Reg is null)
+            return string.Empty;
+
+        return bf1Reg.GetValue(valueName) as string;
     }
 }

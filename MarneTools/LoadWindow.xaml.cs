@@ -203,18 +203,25 @@ public partial class LoadWindow : Window
             /////////////////////////////////////////////////////
 
             // 通过注册表获取战地1安装目录
-            using var bf1Reg = Registry.LocalMachine.OpenSubKey("SOFTWARE\\EA Games\\Battlefield 1");
-            if (bf1Reg is null)
+            var installDir = CoreUtil.GetRegistryLocalMachineValueData("SOFTWARE\\EA Games\\Battlefield 1", "Install Dir");
+            if (string.IsNullOrWhiteSpace(installDir))
             {
-                AppendLogger("❌ 获取战地1注册表失败，请尝试右键管理员运行，初始化终止");
-                return;
+                installDir = CoreUtil.GetRegistryLocalMachineValueData("SOFTWARE\\WOW6432Node\\EA Games\\Battlefield 1", "Install Dir");
+                if (string.IsNullOrWhiteSpace(installDir))
+                {
+                    installDir = CoreUtil.GetRegistryLocalMachineValueData("SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{335B50BC-6130-4BAF-9A6A-F1561270587B}", "InstallLocation");
+                    if (string.IsNullOrWhiteSpace(installDir))
+                    {
+                        AppendLogger("❌ 获取战地1注册表安装目录失败，请尝试右键管理员运行，或者使用战地1注册表修复工具，初始化终止");
+                        return;
+                    }
+                }
             }
-            AppendLogger("✔️ 获取战地1注册表成功");
 
-            var installDir = bf1Reg.GetValue("Install Dir") as string;
-            if (!Directory.Exists(installDir))
+            CoreUtil.BF1InstallDir = Path.Combine(installDir, "bf1.exe");
+            if (!File.Exists(CoreUtil.BF1InstallDir))
             {
-                AppendLogger("❌ 获取战地1注册表安装目录失败，请尝试右键管理员运行，初始化终止");
+                AppendLogger("❌ 战地1注册表安装目录路径无效");
                 return;
             }
             AppendLogger("✔️ 获取战地1注册表安装目录成功");

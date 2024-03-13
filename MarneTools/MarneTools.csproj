@@ -82,7 +82,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="AppData\FrostyMod\Mods\bf1\" />
         <Folder Include="Properties\PublishProfiles\" />
     </ItemGroup>
 
