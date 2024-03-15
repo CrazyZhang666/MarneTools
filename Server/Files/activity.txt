@@ -6,4 +6,4 @@
 全新魔改地图、全新兵种、全新技能
 
 
-Mod文件名称：AllKitWeaponHero-AllMode-32v32-v7.2.0.0.fbmod
+Mod文件名称：AllKitWeaponHero-AllMode-32v32-v7.3.0.0.fbmod
