@@ -4,7 +4,6 @@
 全武器、全技能、全兵种、全精英兵大战
 --------------
 全新魔改地图、全新兵种、全新技能
---------------
-32v32坦克数量
 
-Mod文件名称：AllKitWeaponHero-AllMode-32v32-v7.1.0.0.fbmod
+
+Mod文件名称：AllKitWeaponHero-AllMode-32v32-v7.2.0.0.fbmod
