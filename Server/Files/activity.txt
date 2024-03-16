@@ -1,7 +1,7 @@
 每周活动
 --------------
 【第七赛季】
-全坦克、全武器、全技能、全兵种、全精英兵  载具步兵大战
+全坦克、全飞机、全武器、全技能、全兵种、全精英兵  载具步兵大战
 --------------
 
-Mod文件名称：AllTank-AllKitWeaponHero-v1.0.0.0.fbmod
+Mod文件名称：AllTank-AllKitWeaponHero-v2.0.0.0.fbmod
