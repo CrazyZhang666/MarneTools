@@ -6,4 +6,4 @@
 载具、飞机、骑兵、步兵大战
 --------------
 
-Mod文件名称：AllTankPlaneHorse-AllKitHero-v3.0.0.0
+Mod文件名称：AllTankPlaneHorse-AllKitHero-v3.1.0.0
