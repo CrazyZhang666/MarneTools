@@ -8,4 +8,4 @@
 步兵、精英兵、坦克、骑兵，任你选择，一次玩个够！
 --------------
 
-Mod文件名称：AllTankHorse-AllKitHero-FortDeVaux-v1.0.0.0.fbmod
+Mod文件名称：AllTankHorse-AllKitHero-FortDeVaux-v2.0.0.0.fbmod
